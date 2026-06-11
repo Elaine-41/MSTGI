@@ -1,0 +1,7 @@
+10-NN Search
+Time of index construction: 254.316315
+Search time: 0.003517
+Search recall: 0.872000
+
+Peak RSS (all): 11809724 KB (11.262630 GB, 0.010999 TB)
+Approx index RSS (excluding base+query files): 8052064 KB (7.679047 GB)

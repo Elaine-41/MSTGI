@@ -1,0 +1,18 @@
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+[?12l[?25hTime of index construction: 81.4495s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0017951s
+Search recall: 0.942
+========== Save results ==========
+Results saved to ./results/deep/aknn_compare/n2_comp_on/cost_10_60.txt
+========== Release memory ==========

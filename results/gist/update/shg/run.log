@@ -1,0 +1,67 @@
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+[?12l[?25h data_rep_memory_: 0x7f5e4e85b010 data_rep_size_:315
+Time of index construction: 5745.91s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.005, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0172016s
+Search recall: 0.473
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0171177s
+Search recall: 0.476
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0171935s
+Search recall: 0.476
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0120965s
+Search recall: 0.476
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.012114s
+Search recall: 0.475
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0134757s
+Search recall: 0.477
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0119741s
+Search recall: 0.477
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0123644s
+Search recall: 0.477
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0120097s
+Search recall: 0.477
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0119799s
+Search recall: 0.477
+Insert avg time: 0.00851299s
+========== Chunked delete 50 items (chunk=2000, rebuild_threshold=0, MARK_DELETE_ONLY) ==========
+  MarkDelete 50 items (total 50) ... total=8.10699s (graph_update=0.00016751s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0154513s
+Search recall: 0.488
+Delete total time: 8.10699s, avg per item: 0.16214s
+========== Save results ==========
+Results saved to ./results/gist/update/shg/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/gist/update/shg/update_curve_k10_l60_ratio0.005.csv
+========== Done ==========

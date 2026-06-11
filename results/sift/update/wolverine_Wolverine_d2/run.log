@@ -1,0 +1,101 @@
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+Time of index construction: 254.556s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.01, update_n=10000, chunk_size=1000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000584891s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000607989s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00058897s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000589168s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000585421s
+Search recall: 0.878
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000594183s
+Search recall: 0.869
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000580149s
+Search recall: 0.857
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000586106s
+Search recall: 0.852
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000591722s
+Search recall: 0.846
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000578569s
+Search recall: 0.846
+Insert avg time: 0.000531554s
+========== Chunked delete 10000 items (chunk=2000, rebuild_threshold=0, Pquery->num: 100
+Time of searc  PatchDelete 2000 items (total 2000) ... [GTI_TREE_PRIORITY_SAME_LEAF] affected=40979 with_same_leaf=38902
+[GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=6.53982s (graph_update=1.28189s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000642704s
+Search recall: 0.846
+  PatchDelete 2000 items (total 4000) ... [GTI_TREE_PRIORITY_SAME_LEAF] affected=40774 with_same_leaf=38780
+[GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=5.96098s (graph_update=1.21566s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000639069s
+Search recall: 0.846
+  PatchDelete 2000 items (total 6000) ... [GTI_TREE_PRIORITY_SAME_LEAF] affected=36956 with_same_leaf=35080
+[GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=5.75873s (graph_update=0.987246s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000787689s
+Search recall: 0.824
+  PatchDelete 2000 items (total 8000) ... [GTI_TREE_PRIORITY_SAME_LEAF] affected=35529 with_same_leaf=33604
+[GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=5.10349s (graph_update=0.880287s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00062496s
+Search recall: 0.808
+  PatchDelete 2000 items (total 10000) ... [GTI_TREE_PRIORITY_SAME_LEAF] affected=37235 with_same_leaf=35282
+[GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=4.90339s (graph_update=0.953505s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000614661s
+Search recall: 0.797
+Delete total time: 28.2664s, avg per item: 0.00282664s
+========== Save results ==========
+Results saved to ./results/sift/update/wolverine_Wolverine_d2/update_summary_k10_l60_ratio0.010.txt
+Curve saved to ./results/sift/update/wolverine_Wolverine_d2/update_cuResults saved to ./results/========== Done ==========
+rine_d2/update_summary_k10_l60_ratio0.010.txt
+Curve saved to ./results/sift/update/wolverine_Wolverine_d2/update_curve_k10_l60_ratio0.010.csv
+========== Done ==========
+
+输出: ./results/sift/update/wolverine_Wolverine_d2/update_curve_k10_l60_ratio0.01.csv
+     ./results/sift/update/wolverine_Wolverine_d2/update_summary_k10_l60_ratio0.01.txt

@@ -1,0 +1,93 @@
+========== 动态更新实验: sift | 策略: wolverine ==========
+  BASE: ./Datasets/sift/sift/sift_base.fvecs
+  RESULT: ./results/sift/update/wolverine/
+
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 24
+Time of index construction: 394.103s
+========== Update ==========
+Search L: 120
+Update setting: ratio=0.01, update_n=10000, chunk_size=1000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00129325s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00129317s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0012961s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00129563s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00129907s
+Search recall: 0.878
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00129904s
+Search recall: 0.869
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00129242s
+Search recall: 0.857
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00129319s
+Search recall: 0.852
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00129501s
+Search recall: 0.846
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00129815s
+Search recall: 0.846
+Insert avg time: 0.000746168s
+========== Chunked delete 10000 items (chunk=2000, rebuild_threshold=0, PATCH_DELETE_ONLY) ==========
+  PatchDelete 2000 items (total 2000) ... total=2.65979s (graph_update=0.22704s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00149319s
+Search recall: 0.846
+  PatchDelete 2000 items (total 4000) ... total=2.52611s (graph_update=0.219668s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00150451s
+Search recall: 0.846
+  PatchDelete 2000 items (total 6000) ... total=2.47104s (graph_update=0.20996s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00146263s
+Search recall: 0.824
+  PatchDelete 2000 items (total 8000) ... total=2.07578s (graph_update=0.208193s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00147572s
+Search recall: 0.808
+  PatchDelete 2000 items (total 10000) ... total=2.2457s (graph_update=0.210623s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00145391s
+Search recall: 0.797
+Delete total time: 11.9784s, avg per item: 0.00119784s
+========== Save results ==========
+Results saved to ./results/sift/update/wolverine/update_summary_k10_l120_ratio0.01.txt
+Curve saved to ./results/sift/update/wolverine/update_curve_k10_l120_ratio0.01.csv
+========== Done ==========
+
+输出: ./results/sift/update/wolverine/update_curve_k10_l60_ratio0.01.csv
+     ./results/sift/update/wolverine/update_summary_k10_l60_ratio0.01.txt

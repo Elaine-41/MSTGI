@@ -1,0 +1,25 @@
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Time of index construction: 247.537s
+========== Update ==========
+Update setting: ratio=0.005, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00273143s
+Search recall: 0.859
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00274409s
+Search recall: 0.859
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00244518s
+Search recall: 0.859
+========== Search GTI ==========

@@ -14,6 +14,7 @@
 
 #include "n2/hnsw_build.h"
 
+#include <memory>
 #include <iostream>
 #include <limits>
 #include <mutex>
@@ -33,9 +34,16 @@
 
 namespace n2
 {
-
+#if __cplusplus < 201402L
+    template<typename T, typename... Args>
+    std::unique_ptr<T> make_unique(Args&&... args) {
+        return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
+    }
+#endif
     using std::defer_lock;
+#if __cplusplus >= 201402L
     using std::make_unique;
+#endif
     using std::min;
     using std::move;
     using std::mt19937;
@@ -205,7 +213,7 @@ namespace n2
         BuildGraph(false);
         if (post_graph_process_ == GraphPostProcessing::MERGE_LEVEL0)
         {
-            logger_->info("graph post processing: merge_level0");
+            // logger_->info("graph post processing: merge_level0");
 
             vector<HnswNode *> nodes_backup;
             nodes_backup.swap(nodes_);
@@ -300,6 +308,36 @@ namespace n2
         }
     }
 
+    // 移除所有节点中对 ids 内节点的引用，避免 deleteData 后产生悬挂指针
+    void HnswBuild::removeAllRefsToIds(const std::vector<int> &ids)
+    {
+        std::unordered_set<int> id_set(ids.begin(), ids.end());
+        for (size_t i = 0; i < nodes_.size(); ++i)
+        {
+            if (nodes_[i] == nullptr || id_set.count((int)i))
+                continue;
+            int level = nodes_[i]->GetLevel();
+            for (int L = 0; L <= level; ++L)
+            {
+                vector<HnswNode *> &neighbors = nodes_[i]->GetFriends(L);
+                for (size_t j = 0; j < neighbors.size(); )
+                {
+                    if (neighbors[j] != nullptr && id_set.count(neighbors[j]->GetId()))
+                    {
+                        neighbors.erase(neighbors.begin() + j);
+                        if (neighbors.size() == 0)
+                        {
+                            // 该层无邻居，需 reinsert；但本接口不返回 reinsert_ids，由调用方在 deleteNeighbor 阶段已收集
+                            break;
+                        }
+                    }
+                    else
+                        ++j;
+                }
+            }
+        }
+    }
+
     // Delete graph data
     void HnswBuild::deleteData(int id)
     {
@@ -334,10 +372,17 @@ namespace n2
     // Build graph from deletion
     shared_ptr<const HnswModel> HnswBuild::buildFromDeletion()
     {
-        // getIndegreeRadius();
-        auto &&model = HnswModel::GenerateModel(nodes_, enterpoint_->GetId(), max_m_, max_m0_, metric_,
+        int enter_id = -1;
+        if (enterpoint_ != nullptr)
+            enter_id = enterpoint_->GetId();
+        if (enter_id < 0) {
+            for (size_t i = 0; i < nodes_.size(); ++i)
+                if (nodes_[i] != nullptr) { enter_id = (int)i; break; }
+        }
+        if (enter_id < 0)
+            throw std::runtime_error("[Error] buildFromDeletion: no valid enterpoint or node");
+        auto &&model = HnswModel::GenerateModel(nodes_, enter_id, max_m_, max_m0_, metric_,
                                                 max_level_, data_dim_);
-
         return move(model);
     }
 
@@ -370,13 +415,21 @@ namespace n2
     // Update enter point
     void HnswBuild::updateEnter(int id)
     {
-        printf("enterpoint\n");
+        if (id < 0 || (size_t)id >= nodes_.size() || nodes_[id] == nullptr)
+            return;
         VisitedList *visited_list = new VisitedList(nodes_.size());
         nodes_[id]->level_ = max_level_;
         nodes_[id]->Reset();
         InsertNode(nodes_[id], visited_list);
         delete visited_list;
         enterpoint_ = nodes_[id];
+    }
+
+    // 仅设置 enterpoint，不调用 InsertNode；用于 delete 后、reinsertData 前，避免 reinsertData 内 InsertNode 使用无效 enterpoint 导致段错误
+    void HnswBuild::setEnterpointById(int id)
+    {
+        if (id >= 0 && (size_t)id < nodes_.size() && nodes_[id] != nullptr)
+            enterpoint_ = nodes_[id];
     }
 
     // Store nodes
@@ -633,11 +686,11 @@ namespace n2
     template <typename DistFuncType>
     HnswBuildImpl<DistFuncType>::HnswBuildImpl(int dim, DistanceKind metric) : HnswBuild(dim, metric)
     {
-        logger_ = spdlog::get("n2");
-        if (logger_ == nullptr)
-        {
-            logger_ = spdlog::stdout_logger_mt("n2");
-        }
+        // logger_ = spdlog::get("n2");
+        // if (logger_ == nullptr)
+        // {
+        //     logger_ = spdlog::stdout_logger_mt("n2");
+        // }
     }
 
     template <typename DistFuncType>

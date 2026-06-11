@@ -1,0 +1,12 @@
+Update experiment (chunked)
+Time of index construction: 652.285767
+Update ratio: 0.010000
+Insert n: 10000
+Delete n: 10000
+Insert chunk size: 1000
+Delete chunk size: 2000
+Rebuild threshold: 0
+Delete strategy: patch_delete_only
+Insert avg time (s/item): 0.001247
+Delete avg time (s/item): 0.013614
+Curve CSV: ./results/sift/update/shg_ef200_l120/update_curve_k10_l120_ratio0.010.csv

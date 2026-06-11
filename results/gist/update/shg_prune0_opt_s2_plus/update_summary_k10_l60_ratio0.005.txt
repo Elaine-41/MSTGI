@@ -1,0 +1,12 @@
+Update experiment (chunked)
+Time of index construction: 947.645386
+Update ratio: 0.005000
+Insert n: 5000
+Delete n: 2000
+Insert chunk size: 500
+Delete chunk size: 200
+Rebuild threshold: 0
+Delete strategy: patch_delete_only
+Insert avg time (s/item): 0.001891
+Delete avg time (s/item): 0.094246
+Curve CSV: ./results/gist/update/shg_prune0_opt_s2_plus/update_curve_k10_l60_ratio0.005.csv

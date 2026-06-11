@@ -1,0 +1,534 @@
+==========================================
+消融: sift - MST + SHG S2+ (GTI_shg)
+MST: sampling=0, thr=200, sample=300, bal=0.1
+ratio=0.01, 输出: ./results/ablation/sift/mst_shg_s2plus
+==========================================
+========== [sift][mst_shg_s2plus] A-kNN ==========
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+MST_CONFIG: full_threshold=200 sample_size=300 balance_min_frac=0.100000 use_sampling=0 seed=42 medoid_k=64
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+[SHG] Graph M: 24 (GTI_SHG_M)
+ data_rep_memory_: 0x7f67e7beb010 data_rep_size_:40
+MST attempts: 900231, used: 900231, fallbacks: 0
+Time of index construction: 164.808395s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000265s
+Search recall: 0.830000
+========== Save results ==========
+Results saved to ./results/ablation/sift/mst_shg_s2plus/aknn/cost_10_60.txt
+========== Release memory ==========
+========== [sift][mst_shg_s2plus] Update ==========
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+MST_CONFIG: full_threshold=200 sample_size=300 balance_min_frac=0.100000 use_sampling=0 seed=42 medoid_k=64
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+[SHG] Graph M: 24 (GTI_SHG_M)
+ data_rep_memory_: 0x7f68cd80b010 data_rep_size_:40
+MST attempts: 900231, used: 900231, fallbacks: 0
+Time of index construction: 166.709457s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.010000, update_n=10000, chunk_size=1000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000226s
+Search recall: 0.830000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000229s
+Search recall: 0.830000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000225s
+Search recall: 0.830000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000234s
+Search recall: 0.830000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000228s
+Search recall: 0.829000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000224s
+Search recall: 0.828000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000223s
+Search recall: 0.825000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000226s
+Search recall: 0.825000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000225s
+Search recall: 0.825000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000226s
+Search recall: 0.825000
+Insert avg time: 0.000439s
+[D] rebuildShortcuts elapsed: 0.328532s
+========== Chunked delete 10000 items (chunk=2000, rebuild_threshold=0, MARK_DELETE_ONLY) ==========
+  MarkDelete 2000 items (total 2000) ... total=9.496834s (graph_update=0.001219s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000238s
+Search recall: 0.825000
+  MarkDelete 2000 items (total 4000) ... total=7.455007s (graph_update=0.001480s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000247s
+Search recall: 0.825000
+  MarkDelete 2000 items (total 6000) ... total=8.799471s (graph_update=0.001279s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000246s
+Search recall: 0.785000
+  MarkDelete 2000 items (total 8000) ... total=6.694758s (graph_update=0.002006s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000241s
+Search recall: 0.759000
+  MarkDelete 2000 items (total 10000) ... total=8.116767s (graph_update=0.001611s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000248s
+Search recall: 0.751000
+Delete total time: 40.562840s, avg per item: 0.004056s
+========== Save results ==========
+Results saved to ./results/ablation/sift/mst_shg_s2plus/update/update_summary_k10_l60_ratio0.010.txt
+Curve saved to ./results/ablation/sift/mst_shg_s2plus/update/update_curve_k10_l60_ratio0.010.csv
+========== Done ==========
+[sift] 完成: ./results/ablation/sift/ablation_compare.csv
+variant           aknn_build_s  aknn_search_s  aknn_recall  update_build_s  update_insert_avg_s  update_delete_avg_s  update_final_recall
+mst_wolverine_d2  401.174591    0.000782       0.878000     405.016174      0.000790             0.004066             0.793
+mst_shg_s2plus    164.808395    0.000265       0.830000     166.709457      0.000439             0.004056             0.751
+./run_ablation_mst_shg_s2plus.sh:行152: 未预期的符号 `>' 附近有语法错误
+======== 2026-03-22T16:45:27+0800 重新启动 MST+SHG S2+ (SHG_PROFILE=best) ========
+>>> SHG_PROFILE=best：Sift m32/120/80，Deep m24/80/80，Gist m24/120/80
+==========================================
+消融: sift - MST + SHG S2+ (GTI_shg)
+MST: sampling=1, thr=32, sample=64, bal=0.05
+SHG: M=32 EF_BUILD=120 EF_SEARCH=80 + S2+
+ratio=0.01, 输出: ./results/ablation/sift/mst_shg_s2plus
+==========================================
+========== [sift][mst_shg_s2plus] A-kNN ==========
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+MST_CONFIG: full_threshold=32 sample_size=64 balance_min_frac=0.050000 use_sampling=1 seed=42 medoid_k=64
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+[SHG] Graph M: 32 (GTI_SHG_M)
+ data_rep_memory_: 0x7fd86eb45010 data_rep_size_:40
+MST attempts: 900231, used: 900231, fallbacks: 0
+Time of index construction: 250.335876s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000416s
+Search recall: 0.859000
+========== Save results ==========
+Results saved to ./results/ablation/sift/mst_shg_s2plus/aknn/cost_10_60.txt
+========== Release memory ==========
+========== [sift][mst_shg_s2plus] Update ==========
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+MST_CONFIG: full_threshold=32 sample_size=64 balance_min_frac=0.050000 use_sampling=1 seed=42 medoid_k=64
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+[SHG] Graph M: 32 (GTI_SHG_M)
+ data_rep_memory_: 0x7fe5d1106010 data_rep_size_:40
+MST attempts: 900231, used: 900231, fallbacks: 0
+Time of index construction: 248.826294s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.010000, update_n=10000, chunk_size=1000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000255s
+Search recall: 0.859000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000293s
+Search recall: 0.859000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000248s
+Search recall: 0.859000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000250s
+Search recall: 0.859000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000248s
+Search recall: 0.858000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000249s
+Search recall: 0.857000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000248s
+Search recall: 0.854000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000251s
+Search recall: 0.854000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000247s
+Search recall: 0.854000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000249s
+Search recall: 0.854000
+Insert avg time: 0.000586s
+[D] rebuildShortcuts elapsed: 0.288316s
+========== Chunked delete 10000 items (chunk=2000, rebuild_threshold=0, MARK_DELETE_ONLY) ==========
+  MarkDelete 2000 items (total 2000) ... total=9.369845s (graph_update=0.001260s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000269s
+Search recall: 0.854000
+  MarkDelete 2000 items (total 4000) ... total=7.223458s (graph_update=0.001409s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000262s
+Search recall: 0.854000
+  MarkDelete 2000 items (total 6000) ... total=8.624221s (graph_update=0.001265s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000269s
+Search recall: 0.813000
+  MarkDelete 2000 items (total 8000) ... total=6.514722s (graph_update=0.002028s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000265s
+Search recall: 0.785000
+  MarkDelete 2000 items (total 10000) ... total=7.920641s (graph_update=0.001441s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000269s
+Search recall: 0.777000
+Delete total time: 39.652889s, avg per item: 0.003965s
+========== Save results ==========
+Results saved to ./results/ablation/sift/mst_shg_s2plus/update/update_summary_k10_l60_ratio0.010.txt
+Curve saved to ./results/ablation/sift/mst_shg_s2plus/update/update_curve_k10_l60_ratio0.010.csv
+========== Done ==========
+[sift] 完成: ./results/ablation/sift/ablation_compare.csv
+variant           aknn_build_s  aknn_search_s  aknn_recall  update_build_s  update_insert_avg_s  update_delete_avg_s  update_final_recall
+mst_wolverine_d2  401.174591    0.000782       0.878000     405.016174      0.000790             0.004066             0.793
+mst_shg_s2plus    250.335876    0.000416       0.859000     248.826294      0.000586             0.003965             0.777
+./run_ablation_mst_shg_s2plus.sh:行192: 寻找匹配的 `"' 是遇到了未预期的文件结束符
+======== 2026-03-22T17:09:27+0800 ABLATION deep+gist mst_shg_s2plus ========
+>>> SHG_PROFILE=best：Sift m32/120/80，Deep m24/80/80，Gist m24/120/80
+>>> 跳过 sift（ABLATION_DATASETS=deep gist）
+==========================================
+消融: deep - MST + SHG S2+ (GTI_shg)
+MST: sampling=1, thr=32, sample=64, bal=0.05
+SHG: M=24 EF_BUILD=80 EF_SEARCH=80 + S2+
+ratio=0.005, 输出: ./results/ablation/deep/mst_shg_s2plus
+==========================================
+========== [deep][mst_shg_s2plus] A-kNN ==========
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+MST_CONFIG: full_threshold=32 sample_size=64 balance_min_frac=0.050000 use_sampling=1 seed=42 medoid_k=64
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+[SHG] Graph M: 24 (GTI_SHG_M)
+ data_rep_memory_: 0x7f2743ef3010 data_rep_size_:84
+MST attempts: 955020, used: 955017, fallbacks: 3
+Time of index construction: 332.393097s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000428s
+Search recall: 0.865000
+========== Save results ==========
+Results saved to ./results/ablation/deep/mst_shg_s2plus/aknn/cost_10_60.txt
+========== Release memory ==========
+========== [deep][mst_shg_s2plus] Update ==========
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+MST_CONFIG: full_threshold=32 sample_size=64 balance_min_frac=0.050000 use_sampling=1 seed=42 medoid_k=64
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+[SHG] Graph M: 24 (GTI_SHG_M)
+ data_rep_memory_: 0x7f2132e26010 data_rep_size_:84
+MST attempts: 955020, used: 955017, fallbacks: 3
+Time of index construction: 332.058990s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.005000, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000391s
+Search recall: 0.865000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000393s
+Search recall: 0.865000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000389s
+Search recall: 0.865000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000389s
+Search recall: 0.865000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000397s
+Search recall: 0.865000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000391s
+Search recall: 0.865000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000399s
+Search recall: 0.865000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000388s
+Search recall: 0.865000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000390s
+Search recall: 0.865000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000387s
+Search recall: 0.865000
+Insert avg time: 0.000907s
+[D] rebuildShortcuts elapsed: 0.588855s
+========== Chunked delete 5000 items (chunk=2000, rebuild_threshold=0, MARK_DELETE_ONLY) ==========
+  MarkDelete 2000 items (total 2000) ... total=4.785873s (graph_update=0.001414s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000409s
+Search recall: 0.863000
+  MarkDelete 2000 items (total 4000) ... total=6.485846s (graph_update=0.001607s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000412s
+Search recall: 0.863000
+  MarkDelete 1000 items (total 5000) ... total=3.882683s (graph_update=0.000792s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000427s
+Search recall: 0.862000
+Delete total time: 15.154402s, avg per item: 0.003031s
+========== Save results ==========
+Results saved to ./results/ablation/deep/mst_shg_s2plus/update/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/ablation/deep/mst_shg_s2plus/update/update_curve_k10_l60_ratio0.005.csv
+========== Done ==========
+[deep] 完成: ./results/ablation/deep/ablation_compare.csv
+variant           aknn_build_s  aknn_search_s  aknn_recall  update_build_s  update_insert_avg_s  update_delete_avg_s  update_final_recall
+mst_wolverine_d2  707.216675    0.001254       0.934000     703.126465      0.001616             0.005025             0.925
+mst_shg_s2plus    332.393097    0.000428       0.865000     332.058990      0.000907             0.003031             0.862
+==========================================
+消融: gist - MST + SHG S2+ (GTI_shg)
+MST: sampling=0, thr=200, sample=200, bal=0.1
+SHG: M=24 EF_BUILD=120 EF_SEARCH=80 + S2+
+ratio=0.005, 输出: ./results/ablation/gist/mst_shg_s2plus
+==========================================
+========== [gist][mst_shg_s2plus] A-kNN ==========
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+MST_CONFIG: full_threshold=200 sample_size=200 balance_min_frac=0.100000 use_sampling=0 seed=42 medoid_k=64
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+[SHG] Graph M: 24 (GTI_SHG_M)
+ data_rep_memory_: 0x7fa4d7d55010 data_rep_size_:315
+MST attempts: 941213, used: 940805, fallbacks: 408
+Time of index construction: 1210.236938s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000889s
+Search recall: 0.753000
+========== Save results ==========
+Results saved to ./results/ablation/gist/mst_shg_s2plus/aknn/cost_10_60.txt
+========== Release memory ==========
+========== [gist][mst_shg_s2plus] Update ==========
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+MST_CONFIG: full_threshold=200 sample_size=200 balance_min_frac=0.100000 use_sampling=0 seed=42 medoid_k=64
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+[SHG] Graph M: 24 (GTI_SHG_M)
+ data_rep_memory_: 0x7f586b0be010 data_rep_size_:315
+MST attempts: 941213, used: 940805, fallbacks: 408
+Time of index construction: 1207.604248s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.005000, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000815s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000805s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000903s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000801s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000826s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000787s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000790s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000790s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000793s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000791s
+Search recall: 0.753000
+Insert avg time: 0.001982s
+[D] rebuildShortcuts elapsed: 1.757249s
+========== Chunked delete 2000 items (chunk=200, rebuild_threshold=0, MARK_DELETE_ONLY) ==========
+  MarkDelete 200 items (total 200) ... total=3.352987s (graph_update=0.000311s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000800s
+Search recall: 0.754000
+  MarkDelete 200 items (total 400) ... total=5.202023s (graph_update=0.000273s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000803s
+Search recall: 0.753000
+  MarkDelete 200 items (total 600) ... total=4.938334s (graph_update=0.000300s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000808s
+Search recall: 0.754000
+  MarkDelete 200 items (total 800) ... total=6.952753s (graph_update=0.000266s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000804s
+Search recall: 0.753000
+  MarkDelete 200 items (total 1000) ... total=4.395742s (graph_update=0.000354s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000804s
+Search recall: 0.753000
+  MarkDelete 200 items (total 1200) ... total=6.035856s (graph_update=0.000346s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000991s
+Search recall: 0.753000
+  MarkDelete 200 items (total 1400) ... total=7.805127s (graph_update=0.000301s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001191s
+Search recall: 0.753000
+  MarkDelete 200 items (total 1600) ... total=5.480587s (graph_update=0.000325s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001085s
+Search recall: 0.753000
+  MarkDelete 200 items (total 1800) ... total=5.409451s (graph_update=0.000493s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001015s
+Search recall: 0.753000
+  MarkDelete 200 items (total 2000) ... total=11.404337s (graph_update=0.000295s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000889s
+Search recall: 0.753000
+Delete total time: 60.977196s, avg per item: 0.030489s
+========== Save results ==========
+Results saved to ./results/ablation/gist/mst_shg_s2plus/update/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/ablation/gist/mst_shg_s2plus/update/update_curve_k10_l60_ratio0.005.csv
+========== Done ==========
+[gist] 完成: ./results/ablation/gist/ablation_compare.csv
+variant           aknn_build_s  aknn_search_s  aknn_recall  update_build_s  update_insert_avg_s  update_delete_avg_s  update_final_recall
+mst_wolverine_d2  1610.994629   0.002615       0.858000     1555.320435     0.002301             0.017360             0.849
+mst_shg_s2plus    1210.236938   0.000889       0.753000     1207.604248     0.001982             0.030489             0.753
+
+==========================================
+MST + SHG S2+ 三数据集消融完成
+结果: results/ablation/{sift,deep,gist}/mst_shg_s2plus/
+==========================================

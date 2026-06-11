@@ -1,0 +1,23 @@
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+MST_CONFIG: full_threshold=32 sample_size=64 balance_min_frac=0.050000 use_sampling=1 seed=42 medoid_k=64
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+[SHG] Graph M: 32 (GTI_SHG_M)
+ data_rep_memory_: 0x7fd86eb45010 data_rep_size_:40
+MST attempts: 900231, used: 900231, fallbacks: 0
+Time of index construction: 250.335876s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000416s
+Search recall: 0.859000
+========== Save results ==========
+Results saved to ./results/ablation/sift/mst_shg_s2plus/aknn/cost_10_60.txt
+========== Release memory ==========

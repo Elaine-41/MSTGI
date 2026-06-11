@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTI 实验结果图表</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+    h1 { text-align: center; }
+    .chart-container { position: relative; height: 400px; margin: 40px 0; }
+    h2 { margin-top: 40px; border-bottom: 1px solid #ccc; padding-bottom: 8px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <h1>GTI 实验结果图表（基于 6.2 汇总表）</h1>
+
+  <h2>1. Recall 对比：GTI vs Wolverine</h2>
+  <div class="chart-container">
+    <canvas id="chartRecall"></canvas>
+  </div>
+
+  <h2>2. 删除时间对比（s/item，对数刻度）</h2>
+  <div class="chart-container">
+    <canvas id="chartDelete"></canvas>
+  </div>
+
+  <h2>3. MST-Split Recall 提升</h2>
+  <div class="chart-container">
+    <canvas id="chartMst"></canvas>
+  </div>
+
+  <h2>4. OPS 吞吐量对比</h2>
+  <div class="chart-container">
+    <canvas id="chartOps"></canvas>
+  </div>
+
+  <h2>5. Recall vs 删除时间 权衡</h2>
+  <div class="chart-container">
+    <canvas id="chartTradeoff"></canvas>
+  </div>
+
+  <script>
+    Chart.defaults.font.family = 'sans-serif';
+    Chart.defaults.font.size = 12;
+
+    // 图1: Recall 柱状图
+    new Chart(document.getElementById('chartRecall'), {
+      type: 'bar',
+      data: {
+        labels: ['Sift', 'Gist', 'Deep'],
+        datasets: [
+          { label: 'GTI (lazy)', data: [0.877, 0.874, 0.936], backgroundColor: 'rgba(46, 204, 113, 0.8)' },
+          { label: 'Wolverine', data: [0.796, 0.850, 0.907], backgroundColor: 'rgba(52, 152, 219, 0.8)' }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top' }, title: { display: true, text: 'GTI recall 高于 Wolverine' } },
+        scales: { y: { min: 0.7, max: 1 } }
+      }
+    });
+
+    // 图2: 删除时间柱状图（对数）
+    new Chart(document.getElementById('chartDelete'), {
+      type: 'bar',
+      data: {
+        labels: ['Sift direct', 'Sift lazy', 'Sift wolverine', 'Gist lazy', 'Gist wolverine', 'Deep lazy', 'Deep wolverine', 'SHG no_rebuild', 'SHG rebuild'],
+        datasets: [{ label: '删除时间 (s/item)', data: [0.128, 0.120, 0.001, 0.035, 0.004, 0.371, 0.001, 0.018, 0.007],
+          backgroundColor: ['#e74c3c','#e74c3c','#3498db','#e74c3c','#3498db','#e74c3c','#3498db','#9b59b6','#9b59b6'] }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, title: { display: true, text: 'Wolverine/SHG rebuild 删除最快' } },
+        scales: { y: { type: 'logarithmic', min: 0.0005, max: 0.5 } },
+        indexAxis: 'y'
+      }
+    });
+
+    // 图3: MST Recall 柱状图
+    new Chart(document.getElementById('chartMst'), {
+      type: 'bar',
+      data: {
+        labels: ['Deep', 'Gist'],
+        datasets: [
+          { label: 'LB 基线', data: [0.937, 0.881], backgroundColor: 'rgba(149, 165, 166, 0.8)' },
+          { label: 'MST 最佳', data: [0.958, 0.889], backgroundColor: 'rgba(39, 174, 96, 0.8)' }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top' }, title: { display: true, text: 'MST 提升 Deep +2.1%, Gist +0.8%' } },
+        scales: { y: { min: 0.85, max: 1 } }
+      }
+    });
+
+    // 图4: OPS 柱状图
+    new Chart(document.getElementById('chartOps'), {
+      type: 'bar',
+      data: {
+        labels: ['Lazy', 'Wolverine'],
+        datasets: [
+          { label: 'insert_OPS', data: [1027, 1819], backgroundColor: 'rgba(26, 188, 156, 0.8)' },
+          { label: 'delete_OPS', data: [189, 3516], backgroundColor: 'rgba(230, 126, 34, 0.8)' }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top' }, title: { display: true, text: 'Wolverine delete_OPS 约 20x' } }
+      }
+    });
+
+    // 图5: Recall vs 删除时间 散点图
+    new Chart(document.getElementById('chartTradeoff'), {
+      type: 'scatter',
+      data: {
+        datasets: [
+          { label: 'GTI', data: [{x: 0.371, y: 0.936}, {x: 0.128, y: 0.904}, {x: 0.120, y: 0.877}, {x: 0.035, y: 0.874}],
+            backgroundColor: 'rgba(39, 174, 96, 0.7)', pointRadius: 10 },
+          { label: 'Wolverine', data: [{x: 0.001, y: 0.796}, {x: 0.004, y: 0.850}, {x: 0.001, y: 0.907}],
+            backgroundColor: 'rgba(52, 152, 219, 0.7)', pointRadius: 10 },
+          { label: 'SHG', data: [{x: 0.018, y: 0.756}, {x: 0.007, y: 0.756}],
+            backgroundColor: 'rgba(155, 89, 182, 0.7)', pointRadius: 10 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top' }, title: { display: true, text: 'Recall vs 删除时间：左上角更优' } },
+        scales: {
+          x: { type: 'logarithmic', min: 0.0005, max: 0.5, title: { display: true, text: '删除时间 (s/item)' } },
+          y: { min: 0.72, max: 0.98, title: { display: true, text: 'Recall' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

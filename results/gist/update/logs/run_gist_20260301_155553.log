@@ -1,0 +1,149 @@
+[2026-03-01T15:55:53+0800] START
+GTI_UPDATE_RATIO=0.001 (update_n = data_size * 0.001)
+========== 运行四种删除策略: gist ==========
+
+>>> 策略: direct <<<
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+[?12l[?25hTime of index construction: 216.051s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.001, update_n=1000, chunk_size=100
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00384731s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00521891s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0036141s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00365973s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00378749s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00390055s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00344274s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00413022s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00351246s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00353633s
+Search recall: 0.863
+Insert avg time: 0.0332801s
+========== Chunked delete 1000 items (chunk=1000, rebuild_threshold=500) ==========
+  Rebuild 1000 items (total 1000) ... ./run_compare_all_delete_strategies.sh: 行 70: 148730 段错误               (吐核)"$RUN_BIN" "$BASE" "$QUERY" 3 "$GT" "${RESULT_DIR}/"
+     148731 完成                  | tee "$LOG"
+注意: gist direct 失败，跳过
+
+>>> 策略: lazy <<<
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+[?12l[?25hTime of index construction: 206.146s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.001, update_n=1000, chunk_size=100
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0050408s
+Search recall: 0.875
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00465853s
+Search recall: 0.875
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00450233s
+Search recall: 0.875
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00442663s
+Search recall: 0.875
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00393985s
+Search recall: 0.874
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00412846s
+Search recall: 0.874
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00852498s
+Search recall: 0.874
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00446246s
+Search recall: 0.874
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00416663s
+Search recall: 0.873
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00352536s
+Search recall: 0.873
+Insert avg time: 0.0346007s
+========== Chunked delete 1000 items (chunk=200, rebuild_threshold=5000) ==========
+  Lazy delete 200 (total 200) ... 4.2346e-05s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00338721s
+Search recall: 0.873
+  Lazy delete 200 (total 400) ... 1.0139e-05s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00339308s
+Search recall: 0.872
+  Lazy delete 200 (total 600) ... 1.579e-05s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00337884s
+Search recall: 0.872
+  Lazy delete 200 (total 800) ... 1.0031e-05s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00362564s
+Search recall: 0.871
+  Lazy delete 200 (total 1000) ... 2.1384e-05s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0034908s
+Search recall: 0.871
+  Final rebuild 1000 items ... ./run_compare_all_delete_strategies.sh: 行 70: 150382 段错误               (吐核)"$RUN_BIN" "$BASE" "$QUERY" 3 "$GT" "${RESULT_DIR}/"
+     150383 完成                  | tee "$LOG"

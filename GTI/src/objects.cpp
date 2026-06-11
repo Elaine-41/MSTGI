@@ -150,15 +150,12 @@ void Objects::release()
 {
     if (objects != NULL)
     {
-        delete this->objects;
+        delete[] this->objects;
         this->objects = NULL;
     }
+    // Properly release vecs vector
     if (!vecs.empty())
     {
-        for (unsigned i = 0; i < vecs.size(); i++)
-        {
-            std::vector<float>().swap(vecs[i]);
-        }
         std::vector<std::vector<float>>().swap(vecs);
     }
 }

@@ -1,0 +1,20 @@
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+MST_CONFIG: full_threshold=32 sample_size=64 balance_min_frac=0.050000 use_sampling=1 seed=42 medoid_k=64
+MST attempts: 955020, used: 955017, fallbacks: 3
+Time of index construction: 707.216675s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001254s
+Search recall: 0.934000
+========== Save results ==========
+Results saved to ./results/ablation/deep/mst_wolverine_d2/aknn/cost_10_60.txt
+========== Release memory ==========

@@ -1,0 +1,23 @@
+	Command being timed: "./GTI/bin/GTI ./Datasets/gist/gist_base.fvecs ./Datasets/gist/gist_query.fvecs 0 ./Datasets/gist/gist_groundtruth.ivecs 60 10 ./results/gist/approximate/"
+	User time (seconds): 4876.58
+	System time (seconds): 65.06
+	Percent of CPU this job got: 1891%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:21.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 11809724
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 17417721
+	Voluntary context switches: 537156
+	Involuntary context switches: 59889
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

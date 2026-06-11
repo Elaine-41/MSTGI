@@ -1,0 +1,90 @@
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Time of index construction: 73.4877s
+========== Update ==========
+Update setting: ratio=0.01, update_n=10000, chunk_size=1000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00141387s
+Search recall: 0.938
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00137629s
+Search recall: 0.939
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00137331s
+Search recall: 0.939
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00137778s
+Search recall: 0.939
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0013746s
+Search recall: 0.938
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00137057s
+Search recall: 0.936
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00137042s
+Search recall: 0.936
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00138179s
+Search recall: 0.936
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00138512s
+Search recall: 0.936
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00145818s
+Search recall: 0.936
+Insert avg time: 0.00128436s
+========== Chunked delete 5000 items (RANDOM oids, chunk=1000, rebuild_threshold=10000) ==========
+  Lazy delete 1000 (total 1000) ... 0.000113113s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0013771s
+Search recall: 0.935
+  Lazy delete 1000 (total 2000) ... 0.00011727s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00138034s
+Search recall: 0.935
+  Lazy delete 1000 (total 3000) ... 8.9149e-05s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00138043s
+Search recall: 0.934
+  Lazy delete 1000 (total 4000) ... 0.000151201s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00138091s
+Search recall: 0.934
+  Lazy delete 1000 (total 5000) ... 9.3187e-05s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001639s
+Search recall: 0.934
+  Final rebuild 5000 items ... enterpoint
+total=1908.01s (graph_update=1878.78s, rebuild=1.09107s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00143394s
+Search recall: 0.933
+Delete total time: 1908.01s, avg per item: 0.381601s
+========== Save results ==========
+Results saved to ./results/deep/update/update_summary_k10_l60_ratio0.01.txt
+Curve saved to ./results/deep/update/update_curve_k10_l60_ratio0.01.csv
+========== Release memory ==========

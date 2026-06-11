@@ -1,0 +1,4 @@
+dataset,compression,backend,aknn_build_s,aknn_search_s,aknn_recall
+deep,on,n2,81.449471,0.001795,0.942000
+deep,on,wolverine,489.731445,0.001030,0.914000
+deep,on,shg,1265.246094,0.006761,0.873000

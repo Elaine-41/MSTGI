@@ -92,11 +92,13 @@ namespace n2
         void buildFromInsert();                                                             // Build graph from insertion
         float getRadius(unsigned id);                                                       // Get in degree radius of node id
         void deleteNeighbor(int source, int neighbor, std::vector<unsigned> &reinsert_ids); // Delete neighbor
+        void removeAllRefsToIds(const std::vector<int> &ids);                               // 移除悬挂引用
         void deleteData(int id);                                                            // Delete graph data
         void buildFromDeletion();                                                           // Build graph from deletion
         void reinsertData(std::vector<unsigned> reinsert_gids);                             // Reinsert data into graph
         bool checkEnter(int id);                                                            // Check whether the data is enter point
         void updateEnter(int id);                                                           // Update enter point
+        void setEnterpointById(int id);                                                     // 仅设置 enterpoint（不 InsertNode）
 
         /**
          * @brief Builds a hnsw graph with given configurations.
@@ -152,9 +154,10 @@ namespace n2
                                     std::vector<std::pair<int, float>> &result,
                                     std::vector<Neighbor> &result_leaf,
                                     std::vector<GTI_Entry *> &entries_sec,
-                                    std::vector<std::vector<float>> &data)
+                                    std::vector<std::vector<float>> &data,
+                                    int enterpoint_id = -1)
         {
-            searcher_->SearchByVectorM(qvec, k, ef_search, ensure_k_, result, result_leaf, entries_sec, data);
+            searcher_->SearchByVectorM(qvec, k, ef_search, ensure_k_, result, result_leaf, entries_sec, data, enterpoint_id);
         }
         inline void SearchById(int id, size_t k, size_t ef_search, std::vector<int> &result)
         {

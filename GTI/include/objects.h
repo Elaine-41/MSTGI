@@ -20,8 +20,11 @@ public:
     std::vector<std::vector<float>> vecs; // Data objects in vector format
 
     // Functions
-    Objects(){};
-    ~Objects(){};
+    Objects() : objects(nullptr) {};
+    ~Objects(){
+        // Don't call release() here since it's called manually in main
+        // release();
+    };
     void loadData(char *file);                  // Load data
     void loadDataVec(char *file);               // Load data in vector format
     void loadDataVec(char *file, unsigned num); // Load data in vector format

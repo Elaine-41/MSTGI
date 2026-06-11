@@ -1,0 +1,17 @@
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Time of index construction: 76.0477s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00113116s
+Search recall: 0.936
+========== Save results ==========
+Results saved to ./results/lsh_experiment/deep_ef4L_L4K4s4d16_run1/aknn/cost_10_60.txt
+========== Release memory ==========

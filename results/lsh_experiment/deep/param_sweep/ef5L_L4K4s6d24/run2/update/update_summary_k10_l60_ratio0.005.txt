@@ -1,0 +1,7 @@
+Update experiment (chunked)
+Time of index construction: 74.409088
+Update ratio: 0.005000
+Update n: 5000
+Chunk size: 500
+Insert avg time (s/item): 0.002609
+Curve CSV: ./results/lsh_experiment/deep_ef5L_L4K4s6d24_run2/update/update_curve_k10_l60_ratio0.005.csv

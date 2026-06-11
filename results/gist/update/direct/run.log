@@ -1,0 +1,57 @@
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+[?12l[?25hTime of index construction: 216.051s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.001, update_n=1000, chunk_size=100
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00384731s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00521891s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0036141s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00365973s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00378749s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00390055s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00344274s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00413022s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00351246s
+Search recall: 0.863
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00353633s
+Search recall: 0.863
+Insert avg time: 0.0332801s
+========== Chunked delete 1000 items (chunk=1000, rebuild_threshold=500) ==========
+  Rebuild 1000 items (total 1000) ... 

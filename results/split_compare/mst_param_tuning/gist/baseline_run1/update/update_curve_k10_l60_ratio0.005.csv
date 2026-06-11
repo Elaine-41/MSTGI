@@ -1,0 +1,4 @@
+phase,updated,avg_update_s_per_item,avg_search_s_per_query,recall
+insert,500,0.00555451,0.00323918,0.878
+insert,1000,0.00525846,0.00283978,0.878
+insert,1500,0.0051515,0.00283502,0.878

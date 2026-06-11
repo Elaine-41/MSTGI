@@ -1,0 +1,5 @@
+dataset,config,graph_level_offset,build_index_s,avg_search_s_insert_end,avg_search_s_delete_phase,recall_insert_end,recall_delete_phase,avg_insert_s_item,final_rebuild_s,notes
+gist,lazy_baseline,1,201.969,0.003037,0.003937,0.874,0.872,0.029586,,comparison_all_strategies.csv + update_curve ratio0.001 (no_final_rebuild_in_curve)
+gist,lazy_leveloff2,2,127.224,0.307342,0.248818,0.916,0.918,0.009175,526.244,delete_rebuild row in curve
+deep,lazy_baseline,1,65.909,0.001612,0.001877,0.938,0.936,0.003127,1853.58,run.log + update_curve ratio0.005
+deep,lazy_leveloff2,2,31.083,0.152234,0.159254,0.952,0.948,0.000419,1343.56,update_curve ratio0.005

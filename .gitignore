@@ -1,0 +1,21 @@
+# Exclude thesis (per deployment request)
+thesis/
+
+# Build outputs
+build/
+GTI/build/
+GTI/build_*/
+GTI/bin/
+GTI/extern_libraries/n2/build/
+**/CMakeFiles/
+**/*.o
+**/*.a
+
+# Large local vector datasets (GitHub 100MB/file limit; download separately)
+Datasets/gist/
+Datasets/deep/
+Datasets/sift/
+
+# Script run artifacts
+scripts/logs/
+scripts/build/

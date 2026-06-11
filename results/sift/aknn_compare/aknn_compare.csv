@@ -1,0 +1,4 @@
+backend,aknn_build_s,aknn_search_s,aknn_recall
+n2,33.944622,0.001188,0.979000
+wolverine,247.501099,0.000588,0.881000
+shg,484.920990,0.004286,0.836000

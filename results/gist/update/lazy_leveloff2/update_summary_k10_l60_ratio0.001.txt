@@ -1,0 +1,11 @@
+Update experiment (chunked)
+Time of index construction: 127.223656
+Update ratio: 0.001000
+Insert n: 1000
+Delete n: 1000
+Insert chunk size: 100
+Delete chunk size: 200
+Rebuild threshold: 999999
+Insert avg time (s/item): 0.009175
+Delete avg time (s/item): 0.526244
+Curve CSV: ./results/gist/update/lazy_leveloff2/update_curve_k10_l60_ratio0.001.csv

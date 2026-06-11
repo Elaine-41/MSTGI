@@ -1,0 +1,117 @@
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+MST_CONFIG: full_threshold=200 sample_size=200 balance_min_frac=0.100000 use_sampling=0 seed=42 medoid_k=64
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+[SHG] Graph M: 24 (GTI_SHG_M)
+ data_rep_memory_: 0x7f586b0be010 data_rep_size_:315
+MST attempts: 941213, used: 940805, fallbacks: 408
+Time of index construction: 1207.604248s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.005000, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000815s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000805s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000903s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000801s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000826s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000787s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000790s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000790s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000793s
+Search recall: 0.753000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000791s
+Search recall: 0.753000
+Insert avg time: 0.001982s
+[D] rebuildShortcuts elapsed: 1.757249s
+========== Chunked delete 2000 items (chunk=200, rebuild_threshold=0, MARK_DELETE_ONLY) ==========
+  MarkDelete 200 items (total 200) ... total=3.352987s (graph_update=0.000311s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000800s
+Search recall: 0.754000
+  MarkDelete 200 items (total 400) ... total=5.202023s (graph_update=0.000273s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000803s
+Search recall: 0.753000
+  MarkDelete 200 items (total 600) ... total=4.938334s (graph_update=0.000300s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000808s
+Search recall: 0.754000
+  MarkDelete 200 items (total 800) ... total=6.952753s (graph_update=0.000266s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000804s
+Search recall: 0.753000
+  MarkDelete 200 items (total 1000) ... total=4.395742s (graph_update=0.000354s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000804s
+Search recall: 0.753000
+  MarkDelete 200 items (total 1200) ... total=6.035856s (graph_update=0.000346s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000991s
+Search recall: 0.753000
+  MarkDelete 200 items (total 1400) ... total=7.805127s (graph_update=0.000301s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001191s
+Search recall: 0.753000
+  MarkDelete 200 items (total 1600) ... total=5.480587s (graph_update=0.000325s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001085s
+Search recall: 0.753000
+  MarkDelete 200 items (total 1800) ... total=5.409451s (graph_update=0.000493s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001015s
+Search recall: 0.753000
+  MarkDelete 200 items (total 2000) ... total=11.404337s (graph_update=0.000295s, rebuild=0.000000s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000889s
+Search recall: 0.753000
+Delete total time: 60.977196s, avg per item: 0.030489s
+========== Save results ==========
+Results saved to ./results/ablation/gist/mst_shg_s2plus/update/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/ablation/gist/mst_shg_s2plus/update/update_curve_k10_l60_ratio0.005.csv
+========== Done ==========

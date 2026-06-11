@@ -1,0 +1,91 @@
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+Time of index construction: 795.502s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.005, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00206468s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00181904s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00207067s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00204695s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0020589s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00206861s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00209518s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000941613s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00206421s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00102631s
+Search recall: 0.912
+Insert avg time: 0.0018377s
+========== Chunked delete 5000 items (chunk=1000, rebuild_threshold=0, PATCH_DELETE_ONLY) ==========
+  PatchDelete 1000 items (total 1000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=5.63181s (graph_update=2.92713s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00223426s
+Search recall: 0.909
+  PatchDelete 1000 items (total 2000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=6.7886s (graph_update=2.68242s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.002235s
+Search recall: 0.908
+  PatchDelete 1000 items (total 3000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=6.37542s (graph_update=3.43787s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00370803s
+Search recall: 0.907
+  PatchDelete 1000 items (total 4000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=7.64181s (graph_update=2.95807s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00163088s
+Search recall: 0.906
+  PatchDelete 1000 items (total 5000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=8.38893s (graph_update=3.22101s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00400925s
+Search recall: 0.906
+Delete total time: 34.8266s, avg per item: 0.00696531s
+========== Save results ==========
+Results saved to ./results/deep/update/wolverine_Wolverine/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/deep/update/wolverine_Wolverine/update_curve_k10_l60_ratio0.005.csv
+========== Done ==========

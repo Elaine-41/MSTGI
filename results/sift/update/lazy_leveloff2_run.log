@@ -1,0 +1,90 @@
+========== 动态更新实验: sift | 策略: lazy ==========
+  BASE: ./Datasets/sift/sift/sift_base.fvecs
+  RESULT: ./results/sift/update/lazy_leveloff2/
+
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+[GTI] graph_level_offset=2 (build graph at height-3)
+Time of index construction: 17.4779s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.01, update_n=10000, chunk_size=1000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0672314s
+Search recall: 0.847
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0682664s
+Search recall: 0.847
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0668342s
+Search recall: 0.847
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0683238s
+Search recall: 0.847
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0697729s
+Search recall: 0.841
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.068095s
+Search recall: 0.823
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0667501s
+Search recall: 0.812
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0668053s
+Search recall: 0.806
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0663578s
+Search recall: 0.799
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0671534s
+Search recall: 0.798
+Insert avg time: 0.000146408s
+========== Chunked delete 10000 items (chunk=2000, rebuild_threshold=999999) ==========
+  Lazy delete 2000 (total 2000) ... 0.000106615s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0670715s
+Search recall: 0.799
+  Lazy delete 2000 (total 4000) ... 0.000115365s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0675079s
+Search recall: 0.799
+  Lazy delete 2000 (total 6000) ... 8.5781e-05s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0677852s
+Search recall: 0.78
+  Lazy delete 2000 (total 8000) ... 0.00016211s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0702568s
+Search recall: 0.768
+  Lazy delete 2000 (total 10000) ... 7.1139e-05s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0695508s
+Search recall: 0.759
+  Final rebuild 10000 items ... total=2061.85s (graph_update=0s, rebuild=0s)
+========== Search GTI ==========
+./run_update.sh: 行 117: 165581 段错误               (吐核)"$RUN_BIN" "$BASE" "$QUERY" 3 "$GT" "${RESULT_DIR}/"
+     165582 完成                  | tee "$LOG"

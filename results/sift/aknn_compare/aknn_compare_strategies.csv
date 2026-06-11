@@ -1,0 +1,4 @@
+backend,aknn_build_s,aknn_search_s,aknn_recall
+shg_d_rebuild,483.548370,0.004243,0.836000
+shg_e_full,482.560089,0.004220,0.836000
+shg_e_sample65,485.564575,0.004289,0.836000

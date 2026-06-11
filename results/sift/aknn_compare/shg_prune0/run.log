@@ -1,0 +1,20 @@
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+[SHG] Graph M: 24 (GTI_SHG_M)
+ data_rep_memory_: 0x7f017c30b010 data_rep_size_:40
+Time of index construction: 400.313s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00225948s
+Search recall: 0.861
+========== Save results ==========
+Results saved to ./results/sift/aknn_compare/shg_prune0/cost_10_60.txt
+========== Release memory ==========

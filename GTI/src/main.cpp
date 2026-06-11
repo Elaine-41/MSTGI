@@ -2,6 +2,7 @@
 // Created by Ruiyao Ma on 24-01-26
 
 #include <chrono>
+#include <cstdlib>
 #include <string>
 #include "process.h"
 
@@ -13,7 +14,9 @@ int main(int argc, char **argv)
     char *gt_file;                               // Ground truth file
     unsigned capacity_up_i = 64;                 // Upper node capacity for internal node
     unsigned capacity_up_l = 2;                  // Upper node capacity for leaf node
-    int m = 16;                                  // Graph parameters
+    int m = 16;                                  // Graph parameters (M); GTI_M 可覆盖以得更密图
+    if (const char *s = std::getenv("GTI_M"))
+        m = std::max(4, (int)std::strtoul(s, nullptr, 10));
     unsigned l;                                  // L for k-NN serach
     unsigned k;                                  // k for k-NN serach
     float r;                                     // Radius for range search
@@ -71,19 +74,30 @@ int main(int argc, char **argv)
         res_file = argv[5];                                            // Result file
         build(gti, capacity_up_i, capacity_up_l, m, data, time_index); // Build GTI
         update(data, gti, query, res_file, gt_file, time_index);       // Update GTI
-        break;
+        // Wolverine clear() triggers free(): invalid pointer after patchDelete; root cause under investigation.
+        // Use _Exit(0) to skip explicit destructors; results are saved, OS reclaims memory on exit.
+        std::cout << "========== Done ==========" << std::endl;
+        _Exit(0);
+    case 4:
+        gt_file = argv[4];                                             // Ground truth file
+        res_file = argv[5];                                            // Result file
+        build(gti, capacity_up_i, capacity_up_l, m, data, time_index); // Build GTI
+        updateOPS(data, gti, query, res_file, gt_file, time_index);  // Update OPS (Wolverine-style)
+        std::cout << "========== Done ==========" << std::endl;
+        _Exit(0);
     }
 
-    // Release memory
+    // Release memory (delete gti first: its index may hold allocator state;
+    // then data/query to avoid use-after-free if any code path still references them)
     std::cout << "========== Release memory ==========" << std::endl;
+    delete gti;
+    gti = NULL;
     data->release();
     delete data;
     data = NULL;
     query->release();
     delete query;
     query = NULL;
-    delete gti;
-    gti = NULL;
 
     return 0;
 }

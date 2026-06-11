@@ -1,0 +1,3 @@
+variant,aknn_build_s,aknn_search_s,aknn_recall,update_build_s,update_insert_avg_s,update_delete_avg_s,update_final_recall
+mst_wolverine_d2,1610.994629,0.002615,0.858000,1555.320435,0.002301,0.017360,0.849
+mst_shg_s2plus,1210.236938,0.000889,0.753000,1207.604248,0.001982,0.030489,0.753

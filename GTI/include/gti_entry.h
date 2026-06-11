@@ -21,9 +21,7 @@ public:
     GTI_Entry() {};
     ~GTI_Entry()
     {
-        if (child != nullptr)
-        {
-            child = nullptr;
-        }
+        // Don't delete child here - it's handled by releaseTree method
+        // to avoid double deletion
     };
 };

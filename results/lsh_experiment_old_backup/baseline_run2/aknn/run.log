@@ -1,0 +1,17 @@
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Time of index construction: 74.7746s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00143551s
+Search recall: 0.941
+========== Save results ==========
+Results saved to ./results/lsh_experiment/baseline_run2/aknn/cost_10_60.txt
+========== Release memory ==========

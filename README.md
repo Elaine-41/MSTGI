@@ -64,6 +64,18 @@ cd GTI
 bin/GTI ../Datasets/bigann_example_base.fvecs ../Datasets/bigann_example_query.fvecs 0 ../Datasets/bigann_example_groundtruth.ivecs 60 10 ../Datasets/
 ```
 
+### Gist dataset (local) quick run
+
+If your Gist dataset is stored at `Datasets/gist/` (e.g. `gist_base.fvecs`, `gist_query.fvecs`, `gist_groundtruth.ivecs`), you can run:
+
+```shell
+cd GTI-Graph-based-Tree-Index
+bash scripts/run/run_gist_local.sh
+```
+
+This script runs A$k$NNS (default: `k=10, L=60`) and appends **Peak RSS memory** (converted to GB/TB) to the result file:
+`results/gist/approximate/cost_10_60.txt`.
+
 ### Index Updating
 
 Build and then update GTI index.  
@@ -90,6 +102,31 @@ Here is a specific example for GTI updating.
 cd GTI
 bin/GTI ../Datasets/bigann_example_base.fvecs ../Datasets/bigann_example_query.fvecs 3 ../Datasets/bigann_example_groundtruth.ivecs ../Datasets/
 ```
+
+### Dynamic update experiment (0.5% inserts + interleaved queries)
+
+We provide a script for a dynamic setting (update ratio = 0.5% of dataset size, split into 10 batches, interleave queries during inserts).
+
+```shell
+cd GTI-Graph-based-Tree-Index
+bash scripts/run/run_gist_update.sh
+```
+
+Outputs:
+- `results/gist/update/update_curve_k10_l60_ratio0.005.csv` (phase vs avg update time and recall)
+- `results/gist/update/update_summary_k10_l60_ratio0.005.txt` (summary)
+
+### k-sweep experiment on Gist (different k)
+
+To test different k values (e.g. 1, 5, 10, 20, 30, 40, 50) on Gist:
+
+```shell
+cd GTI-Graph-based-Tree-Index
+bash scripts/run/run_gist_k_sweep.sh
+```
+
+This script writes a CSV:
+- `results/gist/k_sweep_L60/k_sweep_L60.csv` (columns: k, build_time, search_time, recall, rss_kb, rss_gb)
 
 ### Exact $k$NNS
 

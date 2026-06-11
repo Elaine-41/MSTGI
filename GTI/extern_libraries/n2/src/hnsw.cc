@@ -198,6 +198,11 @@ namespace n2
         builder_->deleteNeighbor(source, neighbor, reinsert_ids);
     }
 
+    void Hnsw::removeAllRefsToIds(const std::vector<int> &ids)
+    {
+        builder_->removeAllRefsToIds(ids);
+    }
+
     // Delete graph data
     void Hnsw::deleteData(int id)
     {
@@ -235,6 +240,11 @@ namespace n2
     void Hnsw::updateEnter(int id)
     {
         builder_->updateEnter(id);
+    }
+
+    void Hnsw::setEnterpointById(int id)
+    {
+        builder_->setEnterpointById(id);
     }
 
     void Hnsw::Fit()

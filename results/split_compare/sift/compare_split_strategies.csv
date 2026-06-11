@@ -1,0 +1,4 @@
+variant,split_strategy,use_sampling,full_threshold,sample_size,balance_min_frac,aknn_build_s,aknn_search_s,aknn_recall,update_build_s,update_insert_avg_s_per_item,update_final_recall
+sift,baseline_lb,lb,0,200,300,0.1,35.634045,0.001024,0.977000,35.812492,0.001739,0.968
+sift,mst_full,mst,0,200,300,0.1,38.231361,0.001068,0.978000,38.257820,0.001714,0.969
+sift,mst_sampling,mst,1,32,32,0.1,38.232960,0.001059,0.980000,38.591927,0.001741,0.968

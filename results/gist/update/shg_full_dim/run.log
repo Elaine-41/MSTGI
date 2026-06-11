@@ -1,0 +1,68 @@
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+ data_rep_memory_: 0x7f6273caa010 data_rep_size_:315
+Time of index construction: 1335.8s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.005, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00319329s
+Search recall: 0.549
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00277754s
+Search recall: 0.554
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00259495s
+Search recall: 0.555
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00259s
+Search recall: 0.555
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00253684s
+Search recall: 0.555
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00263282s
+Search recall: 0.555
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00291966s
+Search recall: 0.555
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00292411s
+Search recall: 0.555
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00286874s
+Search recall: 0.555
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00261155s
+Search recall: 0.555
+Insert avg time: 0.00237413s
+========== Chunked delete 50 items (chunk=2000, rebuild_threshold=0, MARK_DELETE_ONLY) ==========
+  MarkDelete 50 items (total 50) ... total=5.35517s (graph_update=8.9161e-05s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00261398s
+Search recall: 0.555
+Delete total time: 5.35517s, avg per item: 0.107103s
+========== Save results ==========
+Results saved to ./results/gist/update/shg_full_dim/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/gist/update/shg_full_dim/update_curve_k10_l60_ratio0.005.csv
+========== Done ==========

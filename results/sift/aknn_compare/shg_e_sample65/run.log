@@ -1,0 +1,20 @@
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+ data_rep_memory_: 0x7fa65acc7010 data_rep_size_:40
+HNSW graph layers (maxlevel_): 5
+Time of index construction: 485.565s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00428887s
+Search recall: 0.836
+========== Save results ==========
+Results saved to ./results/sift/aknn_compare/shg_e_sample65/cost_10_60.txt
+========== Release memory ==========

@@ -1,0 +1,91 @@
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+Time of index construction: 452.66s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.005, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000913759s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000910281s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000902533s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000907279s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000902519s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000908044s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000905517s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0009038s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000899878s
+Search recall: 0.913
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000901227s
+Search recall: 0.912
+Insert avg time: 0.000958639s
+========== Chunked delete 5000 items (chunk=1000, rebuild_threshold=0, PATCH_DELETE_ONLY) ==========
+  PatchDelete 1000 items (total 1000) ... [GTI_TREE_PRIORITY_SAME_LEAF] affected=23062 with_same_leaf=22268
+total=1.79885s (graph_update=0.221072s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00105359s
+Search recall: 0.911
+  PatchDelete 1000 items (total 2000) ... [GTI_TREE_PRIORITY_SAME_LEAF] affected=22810 with_same_leaf=22015
+total=2.34601s (graph_update=0.210445s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00103241s
+Search recall: 0.91
+  PatchDelete 1000 items (total 3000) ... [GTI_TREE_PRIORITY_SAME_LEAF] affected=21559 with_same_leaf=20825
+total=1.68966s (graph_update=0.202514s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00101381s
+Search recall: 0.91
+  PatchDelete 1000 items (total 4000) ... [GTI_TREE_PRIORITY_SAME_LEAF] affected=21309 with_same_leaf=20557
+total=1.80432s (graph_update=0.197638s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000997621s
+Search recall: 0.909
+  PatchDelete 1000 items (total 5000) ... [GTI_TREE_PRIORITY_SAME_LEAF] affected=21318 with_same_leaf=20590
+total=1.76122s (graph_update=0.195219s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000981974s
+Search recall: 0.907
+Delete total time: 9.40006s, avg per item: 0.00188001s
+========== Save results ==========
+Results saved to ./results/deep/update/wolverine_same_leaf/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/deep/update/wolverine_same_leaf/update_curve_k10_l60_ratio0.005.csv
+========== Done ==========

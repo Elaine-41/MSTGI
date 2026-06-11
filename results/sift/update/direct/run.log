@@ -1,0 +1,65 @@
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Time of index construction: 34.7193s
+========== Update ==========
+Update setting: ratio=0.01, update_n=10000, chunk_size=1000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00111259s
+Search recall: 0.978
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00103552s
+Search recall: 0.978
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00142615s
+Search recall: 0.978
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00140013s
+Search recall: 0.978
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0010144s
+Search recall: 0.967
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00105111s
+Search recall: 0.938
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00110688s
+Search recall: 0.917
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0010982s
+Search recall: 0.907
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00108918s
+Search recall: 0.898
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00111828s
+Search recall: 0.895
+Insert avg time: 0.000995449s
+========== Chunked delete 10000 items (chunk=10000, rebuild_threshold=5000) ==========
+  Rebuild 10000 items (total 10000) ... enterpoint
+total=1278.81s (graph_update=1268.81s, rebuild=0.622729s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000959659s
+Search recall: 0.904
+Delete total time: 1278.81s, avg per item: 0.127881s
+========== Save results ==========
+Results saved to ./results/sift/update/direct/update_summary_k10_l60_ratio0.01.txt
+Curve saved to ./results/sift/update/direct/update_curve_k10_l60_ratio0.01.csv
+========== Done ==========

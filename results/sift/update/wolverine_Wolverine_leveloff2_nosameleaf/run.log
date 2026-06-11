@@ -1,0 +1,268 @@
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+[GTI] graph_level_offset=2 (build graph at height-3)
+Time of index construction: 33.6949s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.01, update_n=10000, chunk_size=1000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00141527s
+Search recall: 0.315
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00109232s
+Search recall: 0.315
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00110223s
+Search recall: 0.315
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00111327s
+Search recall: 0.315
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00109675s
+Search recall: 0.315
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00110618s
+Search recall: 0.315
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00109447s
+Search recall: 0.315
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00137538s
+Search recall: 0.314
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00109525s
+Search recall: 0.314
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001117s
+Search recall: 0.314
+Insert avg time: 7.2235e-05s
+========== Chunked delete 10000 items (chunk=2000, rebuild_threshold=0, PATCH_DELETE_ONLY) ==========
+  PatchDelete 2000 items (total 2000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=43.2099s (graph_update=0.333568s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00123813s
+Search recall: 0.306
+  PatchDelete 2000 items (total 4000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=51.6286s (graph_update=0.271049s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00114836s
+Search recall: 0.296
+  PatchDelete 2000 items (total 6000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=49.0645s (graph_update=0.285441s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00136184s
+Search recall: 0.267
+  PatchDelete 2000 items (total 8000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=45.1526s (graph_update=0.309836s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00115445s
+Search recall: 0.242
+  PatchDelete 2000 items (total 10000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+*** Error in `./GTI/bin/GTI': double free or corruption (fasttop): 0x000000002b9f7670 ***
+======= Backtrace: =========
+/lib64/libc.so.6(+0x81329)[0x7fd0b507a329]
+./GTI/bin/GTI(_ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZN7hnswlib15HierarchicalNSWIfE11ParallelForIZNS5_29patchDeleteInternalDeleteListESt6vectorIjSaIjEEiiibPKSt13unordered_mapImS7_ISt4pairIfmESaISC_EESt4hashImESt8equal_toImESaISB_IKmSE_EEEPKSA_ImSt13unordered_setImSG_SI_SaImEESG_SI_SaISB_ISJ_SR_EEEEUlmmE1_EEvmmmT_EUlvE_EEEEE6_M_runEv+0x10a)[0x425f6a]
+./GTI/bin/GTI[0x4472b0]
+/lib64/libpthread.so.0(+0x7ea5)[0x7fd0b5e14ea5]
+/lib64/libc.so.6(clone+0x6d)[0x7fd0b50f7b0d]
+======= Memory map: ========
+00400000-0040c000 r--p 00000000 fd:02 1074203261                         /home/shiyi/test/GTI-Graph-based-Tree-Index/GTI-Graph-based-Tree-Index/GTI/bin/GTI
+0040c000-00448000 r-xp 0000c000 fd:02 1074203261                         /home/shiyi/test/GTI-Graph-based-Tree-Index/GTI-Graph-based-Tree-Index/GTI/bin/GTI
+00448000-00451000 r--p 00048000 fd:02 1074203261                         /home/shiyi/test/GTI-Graph-based-Tree-Index/GTI-Graph-based-Tree-Index/GTI/bin/GTI
+00452000-00453000 r--p 00051000 fd:02 1074203261                         /home/shiyi/test/GTI-Graph-based-Tree-Index/GTI-Graph-based-Tree-Index/GTI/bin/GTI
+00453000-00454000 rw-p 00052000 fd:02 1074203261                         /home/shiyi/test/GTI-Graph-based-Tree-Index/GTI-Graph-based-Tree-Index/GTI/bin/GTI
+015c8000-2d383000 rw-p 00000000 00:00 0                                  [heap]
+7fd018000000-7fd01806e000 rw-p 00000000 00:00 0 
+7fd01806e000-7fd01c000000 ---p 00000000 00:00 0 
+7fd020000000-7fd020042000 rw-p 00000000 00:00 0 
+7fd020042000-7fd024000000 ---p 00000000 00:00 0 
+7fd024000000-7fd02406e000 rw-p 00000000 00:00 0 
+7fd02406e000-7fd028000000 ---p 00000000 00:00 0 
+7fd028000000-7fd028021000 rw-p 00000000 00:00 0 
+7fd028021000-7fd02c000000 ---p 00000000 00:00 0 
+7fd02c000000-7fd02c021000 rw-p 00000000 00:00 0 
+7fd02c021000-7fd030000000 ---p 00000000 00:00 0 
+7fd030000000-7fd03006d000 rw-p 00000000 00:00 0 
+7fd03006d000-7fd034000000 ---p 00000000 00:00 0 
+7fd034000000-7fd034046000 rw-p 00000000 00:00 0 
+7fd034046000-7fd038000000 ---p 00000000 00:00 0 
+7fd038000000-7fd038021000 rw-p 00000000 00:00 0 
+7fd038021000-7fd03c000000 ---p 00000000 00:00 0 
+7fd03c000000-7fd03c06b000 rw-p 00000000 00:00 0 
+7fd03c06b000-7fd040000000 ---p 00000000 00:00 0 
+7fd040000000-7fd040043000 rw-p 00000000 00:00 0 
+7fd040043000-7fd044000000 ---p 00000000 00:00 0 
+7fd044000000-7fd044021000 rw-p 00000000 00:00 0 
+7fd044021000-7fd048000000 ---p 00000000 00:00 0 
+7fd048000000-7fd048041000 rw-p 00000000 00:00 0 
+7fd048041000-7fd04c000000 ---p 00000000 00:00 0 
+7fd04c7f9000-7fd04c7fa000 ---p 00000000 00:00 0 
+7fd04c7fa000-7fd04cffa000 rw-p 00000000 00:00 0 
+7fd04cffa000-7fd04cffb000 ---p 00000000 00:00 0 
+7fd04cffb000-7fd04d7fb000 rw-p 00000000 00:00 0 
+7fd04d7fb000-7fd04d7fc000 ---p 00000000 00:00 0 
+7fd04d7fc000-7fd04dffc000 rw-p 00000000 00:00 0 
+7fd04dffc000-7fd04dffd000 ---p 00000000 00:00 0 
+7fd04dffd000-7fd04e7fd000 rw-p 00000000 00:00 0 
+7fd04e7fd000-7fd04e7fe000 ---p 00000000 00:00 0 
+7fd04e7fe000-7fd04effe000 rw-p 00000000 00:00 0 
+7fd04effe000-7fd04efff000 ---p 00000000 00:00 0 
+7fd04efff000-7fd04f7ff000 rw-p 00000000 00:00 0 
+7fd04f7ff000-7fd04f800000 ---p 00000000 00:00 0 
+7fd04f800000-7fd050000000 rw-p 00000000 00:00 0 
+7fd050000000-7fd050042000 rw-p 00000000 00:00 0 
+7fd050042000-7fd054000000 ---p 00000000 00:00 0 
+7fd054000000-7fd054042000 rw-p 00000000 00:00 0 
+7fd054042000-7fd058000000 ---p 00000000 00:00 0 
+7fd058000000-7fd05806e000 rw-p 00000000 00:00 0 
+7fd05806e000-7fd05c000000 ---p 00000000 00:00 0 
+7fd05c000000-7fd05c042000 rw-p 00000000 00:00 0 
+7fd05c042000-7fd060000000 ---p 00000000 00:00 0 
+7fd060000000-7fd060040000 rw-p 00000000 00:00 0 
+7fd060040000-7fd064000000 ---p 00000000 00:00 0 
+7fd064000000-7fd064021000 rw-p 00000000 00:00 0 
+7fd064021000-7fd068000000 ---p 00000000 00:00 0 
+7fd068000000-7fd06806e000 rw-p 00000000 00:00 0 
+7fd06806e000-7fd06c000000 ---p 00000000 00:00 0 
+7fd06c000000-7fd06c042000 rw-p 00000000 00:00 0 
+7fd06c042000-7fd070000000 ---p 00000000 00:00 0 
+7fd070000000-7fd07006f000 rw-p 00000000 00:00 0 
+7fd07006f000-7fd074000000 ---p 00000000 00:00 0 
+7fd074000000-7fd074041000 rw-p 00000000 00:00 0 
+7fd074041000-7fd078000000 ---p 00000000 00:00 0 
+7fd078000000-7fd078021000 rw-p 00000000 00:00 0 
+7fd078021000-7fd07c000000 ---p 00000000 00:00 0 
+7fd07c000000-7fd07c021000 rw-p 00000000 00:00 0 
+7fd07c021000-7fd080000000 ---p 00000000 00:00 0 
+7fd080000000-7fd080022000 rw-p 00000000 00:00 0 
+7fd080022000-7fd084000000 ---p 00000000 00:00 0 
+7fd084000000-7fd084041000 rw-p 00000000 00:00 0 
+7fd084041000-7fd088000000 ---p 00000000 00:00 0 
+7fd088000000-7fd088042000 rw-p 00000000 00:00 0 
+7fd088042000-7fd08c000000 ---p 00000000 00:00 0 
+7fd08c7f9000-7fd08c7fa000 ---p 00000000 00:00 0 
+7fd08c7fa000-7fd08cffa000 rw-p 00000000 00:00 0 
+7fd08cffa000-7fd08cffb000 ---p 00000000 00:00 0 
+7fd08cffb000-7fd08d7fb000 rw-p 00000000 00:00 0 
+7fd08d7fb000-7fd08d7fc000 ---p 00000000 00:00 0 
+7fd08d7fc000-7fd08dffc000 rw-p 00000000 00:00 0 
+7fd08dffc000-7fd08dffd000 ---p 00000000 00:00 0 
+7fd08dffd000-7fd08e7fd000 rw-p 00000000 00:00 0 
+7fd08e7fd000-7fd08e7fe000 ---p 00000000 00:00 0 
+7fd08e7fe000-7fd08effe000 rw-p 00000000 00:00 0 
+7fd08effe000-7fd08efff000 ---p 00000000 00:00 0 
+7fd08efff000-7fd08f7ff000 rw-p 00000000 00:00 0 
+7fd08f7ff000-7fd08f800000 ---p 00000000 00:00 0 
+7fd08f800000-7fd090000000 rw-p 00000000 00:00 0 
+7fd090000000-7fd090042000 rw-p 00000000 00:00 0 
+7fd090042000-7fd094000000 ---p 00000000 00:00 0 
+7fd0947f9000-7fd0947fa000 ---p 00000000 00:00 0 
+7fd0947fa000-7fd094ffa000 rw-p 00000000 00:00 0 
+7fd094ffa000-7fd094ffb000 ---p 00000000 00:00 0 
+7fd094ffb000-7fd0957fb000 rw-p 00000000 00:00 0 
+7fd0957fb000-7fd0957fc000 ---p 00000000 00:00 0 
+7fd0957fc000-7fd095ffc000 rw-p 00000000 00:00 0 
+7fd095ffc000-7fd095ffd000 ---p 00000000 00:00 0 
+7fd095ffd000-7fd0967fd000 rw-p 00000000 00:00 0 
+7fd0967fd000-7fd0967fe000 ---p 00000000 00:00 0 
+7fd0967fe000-7fd096ffe000 rw-p 00000000 00:00 0 
+7fd096ffe000-7fd096fff000 ---p 00000000 00:00 0 
+7fd096fff000-7fd0977ff000 rw-p 00000000 00:00 0 
+7fd0977ff000-7fd097800000 ---p 00000000 00:00 0 
+7fd097800000-7fd098000000 rw-p 00000000 00:00 0 
+7fd098000000-7fd098040000 rw-p 00000000 00:00 0 
+7fd098040000-7fd09c000000 ---p 00000000 00:00 0 
+7fd09c000000-7fd09c046000 rw-p 00000000 00:00 0 
+7fd09c046000-7fd0a0000000 ---p 00000000 00:00 0 
+7fd0a0000000-7fd0a0021000 rw-p 00000000 00:00 0 
+7fd0a0021000-7fd0a4000000 ---p 00000000 00:00 0 
+7fd0a4000000-7fd0a406d000 rw-p 00000000 00:00 0 
+7fd0a406d000-7fd0a8000000 ---p 00000000 00:00 0 
+7fd0a8765000-7fd0a8766000 ---p 00000000 00:00 0 
+7fd0a8766000-7fd0a8f66000 rw-p 00000000 00:00 0 
+7fd0a8f66000-7fd0a8f67000 ---p 00000000 00:00 0 
+7fd0a8f67000-7fd0a9767000 rw-p 00000000 00:00 0 
+7fd0a9767000-7fd0a9768000 ---p 00000000 00:00 0 
+7fd0a9768000-7fd0a9f68000 rw-p 00000000 00:00 0 
+7fd0a9f68000-7fd0a9f69000 ---p 00000000 00:00 0 
+7fd0a9f69000-7fd0aa769000 rw-p 00000000 00:00 0 
+7fd0aa769000-7fd0aa76a000 ---p 00000000 00:00 0 
+7fd0aa76a000-7fd0aaf6a000 rw-p 00000000 00:00 0 
+7fd0aaf6a000-7fd0aaf6b000 ---p 00000000 00:00 0 
+7fd0aaf6b000-7fd0ab76b000 rw-p 00000000 00:00 0 
+7fd0ab76b000-7fd0ab76c000 ---p 00000000 00:00 0 
+7fd0ab76c000-7fd0abf6c000 rw-p 00000000 00:00 0 
+7fd0abf6c000-7fd0abf6d000 ---p 00000000 00:00 0 
+7fd0abf6d000-7fd0b3544000 rw-p 00000000 00:00 0 
+7fd0b37f6000-7fd0b37f7000 ---p 00000000 00:00 0 
+7fd0b37f7000-7fd0b3ff7000 rw-p 00000000 00:00 0 
+7fd0b3ff7000-7fd0b3ff8000 ---p 00000000 00:00 0 
+7fd0b3ff8000-7fd0b47f8000 rw-p 00000000 00:00 0 
+7fd0b47f8000-7fd0b47f9000 ---p 00000000 00:00 0 
+7fd0b47f9000-7fd0b4ff9000 rw-p 00000000 00:00 0 
+7fd0b4ff9000-7fd0b51bd000 r-xp 00000000 fd:00 33627938                   /usr/lib64/libc-2.17.so
+7fd0b51bd000-7fd0b53bc000 ---p 001c4000 fd:00 33627938                   /usr/lib64/libc-2.17.so
+7fd0b53bc000-7fd0b53c0000 r--p 001c3000 fd:00 33627938                   /usr/lib64/libc-2.17.so
+7fd0b53c0000-7fd0b53c2000 rw-p 001c7000 fd:00 33627938                   /usr/lib64/libc-2.17.so
+7fd0b53c2000-7fd0b53c7000 rw-p 00000000 00:00 0 
+7fd0b53c7000-7fd0b53dc000 r-xp 00000000 fd:00 35006853                   /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fd0b53dc000-7fd0b55db000 ---p 00015000 fd:00 35006853                   /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fd0b55db000-7fd0b55dc000 r--p 00014000 fd:00 35006853                   /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fd0b55dc000-7fd0b55dd000 rw-p 00015000 fd:00 35006853                   /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fd0b55dd000-7fd0b5602000 r-xp 00000000 fd:00 34469969                   /usr/lib64/libgomp.so.1.0.0
+7fd0b5602000-7fd0b5801000 ---p 00025000 fd:00 34469969                   /usr/lib64/libgomp.so.1.0.0
+7fd0b5801000-7fd0b5802000 r--p 00024000 fd:00 34469969                   /usr/lib64/libgomp.so.1.0.0
+7fd0b5802000-7fd0b5803000 rw-p 00025000 fd:00 34469969                   /usr/lib64/libgomp.so.1.0.0
+7fd0b5803000-7fd0b5904000 r-xp 00000000 fd:00 33627946                   /usr/lib64/libm-2.17.so
+7fd0b5904000-7fd0b5b03000 ---p 00101000 fd:00 33627946                   /usr/lib64/libm-2.17.so
+7fd0b5b03000-7fd0b5b04000 r--p 00100000 fd:00 33627946                   /usr/lib64/libm-2.17.so
+7fd0b5b04000-7fd0b5b05000 rw-p 00101000 fd:00 33627946                   /usr/lib64/libm-2.17.so
+7fd0b5b05000-7fd0b5bee000 r-xp 00000000 fd:00 33628242                   /usr/lib64/libstdc++.so.6.0.19
+7fd0b5bee000-7fd0b5dee000 ---p 000e9000 fd:00 33628242                   /usr/lib64/libstdc++.so.6.0.19
+7fd0b5dee000-7fd0b5df6000 r--p 000e9000 fd:00 33628242                   /usr/lib64/libstdc++.so.6.0.19
+7fd0b5df6000-7fd0b5df8000 rw-p 000f1000 fd:00 33628242                   /usr/lib64/libstdc++.so.6.0.19
+7fd0b5df8000-7fd0b5e0d000 rw-p 00000000 00:00 0 
+7fd0b5e0d000-7fd0b5e24000 r-xp 00000000 fd:00 33627964                   /usr/lib64/libpthread-2.17.so
+7fd0b5e24000-7fd0b6023000 ---p 00017000 fd:00 33627964                   /usr/lib64/libpthread-2.17.so
+7fd0b6023000-7fd0b6024000 r--p 00016000 fd:00 33627964                   /usr/lib64/libpthread-2.17.so
+7fd0b6024000-7fd0b6025000 rw-p 00017000 fd:00 33627964                   /usr/lib64/libpthread-2.17.so
+7fd0b6025000-7fd0b6029000 rw-p 00000000 00:00 0 
+7fd0b6029000-7fd0b604b000 r-xp 00000000 fd:00 33625831                   /usr/lib64/ld-2.17.so
+7fd0b60c1000-7fd0b6172000 rw-p 00000000 00:00 0 
+7fd0b6193000-7fd0b61d7000 rw-p 00000000 00:00 0 
+7fd0b61ee000-7fd0b61f0000 rw-p 00000000 00:00 0 
+7fd0b61f0000-7fd0b6204000 r--p 00000000 fd:02 2235468873                 /home/shiyi/test/GTI-Graph-based-Tree-Index/GTI-Graph-based-Tree-Index/GTI/extern_libraries/n2/build/lib/libn2.so
+7fd0b6204000-7fd0b623c000 r-xp 00014000 fd:02 2235468873                 /home/shiyi/test/GTI-Graph-based-Tree-Index/GTI-Graph-based-Tree-Index/GTI/extern_libraries/n2/build/lib/libn2.so
+7fd0b623c000-7fd0b6246000 r--p 0004c000 fd:02 2235468873                 /home/shiyi/test/GTI-Graph-based-Tree-Index/GTI-Graph-based-Tree-Index/GTI/extern_libraries/n2/build/lib/libn2.so
+7fd0b6246000-7fd0b6247000 ---p 00056000 fd:02 2235468873                 /home/shiyi/test/GTI-Graph-based-Tree-Index/GTI-Graph-based-Tree-Index/GTI/extern_libraries/n2/build/lib/libn2.so
+7fd0b6247000-7fd0b6248000 r--p 00056000 fd:02 2235468873                 /home/shiyi/test/GTI-Graph-based-Tree-Index/GTI-Graph-based-Tree-Index/GTI/extern_libraries/n2/build/lib/libn2.so
+7fd0b6248000-7fd0b6249000 rw-p 00057000 fd:02 2235468873                 /home/shiyi/test/GTI-Graph-based-Tree-Index/GTI-Graph-based-Tree-Index/GTI/extern_libraries/n2/build/lib/libn2.so
+7fd0b6249000-7fd0b624a000 rw-p 00000000 00:00 0 
+7fd0b624a000-7fd0b624b000 r--p 00021000 fd:00 33625831                   /usr/lib64/ld-2.17.so
+7fd0b624b000-7fd0b624c000 rw-p 00022000 fd:00 33625831                   /usr/lib64/ld-2.17.so
+7fd0b624c000-7fd0b624d000 rw-p 00000000 00:00 0 
+7ffd858cb000-7ffd858ec000 rw-p 00000000 00:00 0                          [stack]
+7ffd8590b000-7ffd8590d000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]

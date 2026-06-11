@@ -1,0 +1,19 @@
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+MST_CONFIG: full_threshold=32 sample_size=64 balance_min_frac=0.100000 use_sampling=1 seed=42 medoid_k=64
+MST attempts: 941209, used: 940801, fallbacks: 408
+Time of index construction: 244.007660s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.003903s
+Search recall: 0.884000
+========== Save results ==========
+Results saved to ./results/split_compare/mst_param_tuning/gist/exp8_run2/aknn/cost_10_60.txt
+========== Release memory ==========

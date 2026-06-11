@@ -66,12 +66,14 @@ namespace n2
         std::shared_ptr<const HnswModel> buildFromInsert();                                 // Build graph from insertion
         float getRadius(unsigned id);                                                       // Get in degree radius of node id
         void deleteNeighbor(int source, int neighbor, std::vector<unsigned> &reinsert_ids); // Delete neighbor
+        void removeAllRefsToIds(const std::vector<int> &ids);                                // 移除所有节点中对 ids 内节点的引用（在 deleteData 前调用，避免 buildFromDeletion 时悬挂指针）
         void deleteData(int id);                                                            // Delete graph data
         std::shared_ptr<const HnswModel> buildFromDeletion();                               // Build graph from deletion
         void getIndegreeRadius();                                                           // Get in degree radius
         void reinsertData(std::vector<unsigned> reinsert_gids);                             // Reinsert data into graph
         bool checkEnter(int id);                                                            // Check whether the data is enter point
-        void updateEnter(int id);                                                           // Update enter point
+        void updateEnter(int id);                                                           // Update enter point (re-insert node)
+        void setEnterpointById(int id);                                                     // 仅设置 enterpoint，不调用 InsertNode（用于 delete 后 reinsertData 前）
 
         virtual void InitPolicies() = 0;
         virtual void InsertNode(HnswNode *qnode, VisitedList *visited_list) = 0;

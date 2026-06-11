@@ -1,0 +1,125 @@
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+Time of index construction: 1423.77s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.005, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00242152s
+Search recall: 0.851
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00213959s
+Search recall: 0.851
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00225818s
+Search recall: 0.851
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00207559s
+Search recall: 0.851
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00224336s
+Search recall: 0.851
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00214369s
+Search recall: 0.851
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00225431s
+Search recall: 0.851
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00212247s
+Search recall: 0.851
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00224705s
+Search recall: 0.851
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00218175s
+Search recall: 0.85
+Insert avg time: 0.00211474s
+========== Chunked delete 2000 items (chunk=200, rebuild_threshold=0, PATCH_DELETE_ONLY) ==========
+  PatchDelete 200 items (total 200) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=3.50893s (graph_update=1.2575s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00288709s
+Search recall: 0.848
+  PatchDelete 200 items (total 400) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=3.44199s (graph_update=1.09062s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.0023822s
+Search recall: 0.846
+  PatchDelete 200 items (total 600) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=2.80265s (graph_update=1.12552s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00218497s
+Search recall: 0.846
+  PatchDelete 200 items (total 800) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=4.03516s (graph_update=1.00724s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00224411s
+Search recall: 0.845
+  PatchDelete 200 items (total 1000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=4.21878s (graph_update=0.920783s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00225928s
+Search recall: 0.843
+  PatchDelete 200 items (total 1200) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=2.90837s (graph_update=0.89274s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00224032s
+Search recall: 0.842
+  PatchDelete 200 items (total 1400) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=4.20925s (graph_update=0.913492s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00217493s
+Search recall: 0.84
+  PatchDelete 200 items (total 1600) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=3.86277s (graph_update=0.830849s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00269496s
+Search recall: 0.84
+  PatchDelete 200 items (total 1800) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=2.64741s (graph_update=0.952013s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00217807s
+Search recall: 0.838
+  PatchDelete 200 items (total 2000) ... [GTI] Wolverine delete_model=2 (Wolverine/SEARCH)
+total=4.64097s (graph_update=0.783609s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00216556s
+Search recall: 0.838
+Delete total time: 36.2763s, avg per item: 0.0181381s
+========== Save results ==========
+Results saved to ./results/gist/update/wolverine_Wolverine/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/gist/update/wolverine_Wolverine/update_curve_k10_l60_ratio0.005.csv
+========== Done ==========
+ne/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/gist/update/wolverine_Wolverine/update_curve_k10_l60_ratio0.005.csv
+========== Done ==========
+./run_update.sh:行123: 寻找匹配的 `"' 是遇到了未预期的文件结束符

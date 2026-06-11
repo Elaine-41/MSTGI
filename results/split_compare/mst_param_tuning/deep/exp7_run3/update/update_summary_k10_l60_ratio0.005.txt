@@ -1,0 +1,7 @@
+Update experiment (chunked)
+Time of index construction: 77.075027
+Update ratio: 0.005000
+Update n: 5000
+Chunk size: 500
+Insert avg time (s/item): 0.002599
+Curve CSV: ./results/split_compare/mst_param_tuning/deep/exp7_run3/update/update_curve_k10_l60_ratio0.005.csv

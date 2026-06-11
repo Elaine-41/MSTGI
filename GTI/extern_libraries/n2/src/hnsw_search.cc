@@ -23,7 +23,11 @@
 namespace n2
 {
 
-    using std::make_unique;
+    // C++11 compatibility: make_unique is C++14 feature
+    template<typename T, typename... Args>
+    std::unique_ptr<T> make_unique(Args&&... args) {
+        return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
+    }
     using std::numeric_limits;
     using std::pair;
     using std::runtime_error;
@@ -160,7 +164,8 @@ namespace n2
     template <typename DistFuncType>
     void HnswSearchImpl<DistFuncType>::SearchByVectorM(const std::vector<float> &qvec, size_t k, int ef_search, bool ensure_k,
                                                        std::vector<std::pair<int, float>> &result, std::vector<Neighbor> &result_leaf, std::vector<GTI_Entry *> &entries_sec,
-                                                       std::vector<std::vector<float>> &data)
+                                                       std::vector<std::vector<float>> &data,
+                                                       int enterpoint_id)
     {
         if (ef_search < 0)
             ef_search = 50 * k;
@@ -177,7 +182,7 @@ namespace n2
         }
 
         _mm_prefetch(qraw, _MM_HINT_T0);
-        int cur_node_id = model_->GetEnterpointId();
+        int cur_node_id = (enterpoint_id >= 0 && enterpoint_id < (int)model_->GetNumNodes()) ? enterpoint_id : model_->GetEnterpointId();
         const float *vec = (const float *)(model_level0_node_base_offset_ + cur_node_id * memory_per_node_level0_);
         _mm_prefetch(vec, _MM_HINT_NTA);
         float cur_dist = dist_func_(qraw, vec, data_dim_);
@@ -420,6 +425,8 @@ namespace n2
         }
 
         candidates.emplace(cur_node_id, cur_dist);
+        if (cur_node_id < 0 || cur_node_id >= (int)entries_sec.size() || entries_sec[cur_node_id] == nullptr)
+            return;  // 起始节点已删除或无效，跳过（deleteTree/deleteGraph 时可能出现）
         InsertIntoPool(result_leaf.data(), ef_search, Neighbor(entries_sec[cur_node_id]->oid, cur_dist, cur_node_id, true, 0));
         found_distances.emplace(cur_dist);
 
@@ -459,6 +466,8 @@ namespace n2
             for (auto j = 1; j <= size; ++j)
             {
                 int node_id = friends_with_size[j];
+                if (node_id < 0 || node_id >= (int)entries_sec.size() || entries_sec[node_id] == nullptr)
+                    continue;  // 跳过已删除节点（model 中可能残留的悬挂链接）
                 if (visited[node_id] != visited_mark)
                 {
                     _mm_prefetch(qraw, _MM_HINT_T0);
@@ -478,20 +487,28 @@ namespace n2
 
                         if (d >= result_leaf[ef_search - 1].dis + entries_sec[node_id]->radius)
                             continue;
+                        if (entries_sec[node_id]->child == nullptr)
+                            continue;
                         const auto &child_entries = entries_sec[node_id]->child->entries;
 
                         for (unsigned m = 1; m < child_entries.size(); m++)
                         {
                             const auto &entry = child_entries[m];
+                            if (entry == nullptr || (unsigned)entry->oid >= data.size() || data[entry->oid].empty())
+                                continue;
                             _mm_prefetch(data[entry->oid].data(), _MM_HINT_NTA);
                         }
 
                         for (unsigned m = 1; m < child_entries.size(); m++)
                         {
+                            if (child_entries[m] == nullptr)
+                                continue;
                             float dis_bound = abs(d - child_entries[m]->dis_p);
                             if (dis_bound >= result_leaf[ef_search - 1].dis)
                                 continue;
                             unsigned oid = child_entries[m]->oid;
+                            if (oid >= data.size() || data[oid].empty())
+                                continue;
                             float dis_leaf = dist_func_(qraw, data[oid].data(), data_dim_);
                             if (dis_leaf >= result_leaf[ef_search - 1].dis)
                                 continue;

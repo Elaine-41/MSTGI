@@ -1,0 +1,12 @@
+Update experiment (chunked)
+Time of index construction: 1103.976807
+Update ratio: 0.005000
+Insert n: 5000
+Delete n: 50
+Insert chunk size: 500
+Delete chunk size: 10
+Rebuild threshold: 0
+Delete strategy: patch_delete_only
+Insert avg time (s/item): 0.001814
+Delete avg time (s/item): 0.022471
+Curve CSV: ./results/gist/update/wolverine/update_curve_k10_l60_ratio0.005.csv

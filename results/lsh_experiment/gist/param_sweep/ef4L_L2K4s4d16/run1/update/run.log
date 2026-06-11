@@ -1,0 +1,57 @@
+========== Load data file ==========
+Data dimension: 960
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 960
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Time of index construction: 249.986s
+========== Update ==========
+Update setting: ratio=0.005, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00257208s
+Search recall: 0.847
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00243244s
+Search recall: 0.844
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00318622s
+Search recall: 0.844
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00297455s
+Search recall: 0.842
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00262561s
+Search recall: 0.842
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00294801s
+Search recall: 0.84
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00288744s
+Search recall: 0.84
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00298462s
+Search recall: 0.841
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00319981s
+Search recall: 0.841
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00278285s
+Search recall: 0.839
+Insert avg time: 0.00552571s
+========== Save results ==========
+Results saved to ./results/lsh_experiment/gist_ef4L_L2K4s4d16_run1/update/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/lsh_experiment/gist_ef4L_L2K4s4d16_run1/update/update_curve_k10_l60_ratio0.005.csv
+========== Release memory ==========

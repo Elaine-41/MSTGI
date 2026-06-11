@@ -1,0 +1,62 @@
+[2026-03-01T15:48:20+0800] START deep
+GTI_UPDATE_RATIO=0.01 (update_n = data_size * 0.01)
+========== 运行四种删除策略: deep ==========
+
+>>> 策略: direct <<<
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+Time of index construction: 66.9007s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.01, update_n=10000, chunk_size=1000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00140021s
+Search recall: 0.939
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00139323s
+Search recall: 0.938
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00142385s
+Search recall: 0.938
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00195523s
+Search recall: 0.938
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00216738s
+Search recall: 0.937
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00137485s
+Search recall: 0.936
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00133462s
+Search recall: 0.936
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00134327s
+Search recall: 0.935
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00193293s
+Search recall: 0.935
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00222378s
+Search recall: 0.935
+Insert avg time: 0.00136888s
+========== Chunked delete 10000 items (chunk=10000, rebuild_threshold=5000) ==========
+  Rebuild 10000 items (total 10000) ... 

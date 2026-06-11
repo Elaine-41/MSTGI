@@ -1,0 +1,11 @@
+Update experiment (chunked)
+Time of index construction: 73.487701
+Update ratio: 0.010000
+Insert n: 10000
+Delete n: 5000
+Insert chunk size: 1000
+Delete chunk size: 1000
+Rebuild threshold: 10000
+Insert avg time (s/item): 0.001284
+Delete avg time (s/item): 0.381601
+Curve CSV: ./results/deep/update/update_curve_k10_l60_ratio0.01.csv

@@ -1,0 +1,84 @@
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Time of index construction: 158.976s
+========== Update ==========
+Update setting: ratio=0.01, update_n=10000, chunk_size=1000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000805763s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000804072s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000805125s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000808924s
+Search recall: 0.881
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000804336s
+Search recall: 0.878
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000804239s
+Search recall: 0.869
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000803957s
+Search recall: 0.857
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000803812s
+Search recall: 0.852
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000803545s
+Search recall: 0.846
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000802547s
+Search recall: 0.846
+Insert avg time: 0.000376533s
+========== Chunked delete 10000 items (chunk=2000, rebuild_threshold=0, PATCH_DELETE_ONLY) ==========
+  PatchDelete 2000 items (total 2000) ... total=2.76354s (graph_update=0.208206s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000958081s
+Search recall: 0.846
+  PatchDelete 2000 items (total 4000) ... total=2.60257s (graph_update=0.199908s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000934651s
+Search recall: 0.846
+  PatchDelete 2000 items (total 6000) ... total=2.57878s (graph_update=0.19066s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000929032s
+Search recall: 0.824
+  PatchDelete 2000 items (total 8000) ... total=2.17441s (graph_update=0.191214s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000931687s
+Search recall: 0.808
+  PatchDelete 2000 items (total 10000) ... total=2.35647s (graph_update=0.190187s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000908355s
+Search recall: 0.797
+Delete total time: 12.4758s, avg per item: 0.00124758s
+========== Save results ==========
+Results saved to ./results/sift/update/recall_sweep/efb100_em8/update_summary_k10_l60_ratio0.01.txt
+Curve saved to ./results/sift/update/recall_sweep/efb100_em8/update_curve_k10_l60_ratio0.01.csv
+========== Done ==========

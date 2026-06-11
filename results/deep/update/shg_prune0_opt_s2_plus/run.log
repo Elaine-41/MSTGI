@@ -1,0 +1,80 @@
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+[SHG] Graph M: 24 (GTI_SHG_M)
+ data_rep_memory_: 0x7f56fb346010 data_rep_size_:84
+Time of index construction: 423.605s
+========== Update ==========
+Search L: 60
+Update setting: ratio=0.005, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000458042s
+Search recall: 0.854
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000363527s
+Search recall: 0.854
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000371062s
+Search recall: 0.854
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000361465s
+Search recall: 0.854
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000366532s
+Search recall: 0.854
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00034176s
+Search recall: 0.854
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000338213s
+Search recall: 0.854
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000367686s
+Search recall: 0.854
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000360441s
+Search recall: 0.854
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000377077s
+Search recall: 0.854
+Insert avg time: 0.000926609s
+[D] rebuildShortcuts elapsed: 0.549106s
+========== Chunked delete 5000 items (chunk=2000, rebuild_threshold=0, MARK_DELETE_ONLY) ==========
+  MarkDelete 2000 items (total 2000) ... total=5.6002s (graph_update=0.00140733s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000361704s
+Search recall: 0.852
+  MarkDelete 2000 items (total 4000) ... total=8.69894s (graph_update=0.00161549s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000353146s
+Search recall: 0.85
+  MarkDelete 1000 items (total 5000) ... total=4.10586s (graph_update=0.000848192s, rebuild=0s)
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.000358797s
+Search recall: 0.849
+Delete total time: 18.405s, avg per item: 0.003681s
+========== Save results ==========
+Results saved to ./results/deep/update/shg_prune0_opt_s2_plus/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/deep/update/shg_prune0_opt_s2_plus/update_curve_k10_l60_ratio0.005.csv
+========== Done ==========

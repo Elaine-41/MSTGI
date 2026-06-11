@@ -1,0 +1,4 @@
+dataset,variant,run_id,split_strategy,use_sampling,full_threshold,sample_size,balance_min_frac,lsh_enabled,lsh_tables,lsh_k,lsh_seed_count,ef_seed,aknn_build_s,aknn_search_s,aknn_recall,update_build_s,update_insert_avg_s_per_item,update_final_recall
+deep,lsh,1,lb,0,200,300,0.1,1,2,4,2,32,74.700981,0.003084,0.937000,78.633919,0.003117,0.934
+deep,lsh,2,lb,0,200,300,0.1,1,2,4,2,32,79.882324,0.002637,0.943000,76.404007,0.002596,0.939
+deep,lsh,3,lb,0,200,300,0.1,1,2,4,2,32,75.109711,0.002671,0.943000,77.089088,0.002791,0.94

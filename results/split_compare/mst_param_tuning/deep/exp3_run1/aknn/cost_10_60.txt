@@ -1,0 +1,4 @@
+10-NN Search
+Time of index construction: 78.256470
+Search time: 0.001443
+Search recall: 0.956000

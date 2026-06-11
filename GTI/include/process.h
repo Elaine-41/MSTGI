@@ -20,3 +20,6 @@ void searchExactRange(Objects *query, GTI *gti, float r, char *res_file, float t
 
 // Update GTI
 void update(Objects *data, GTI *&gti, Objects *query, char *res_file, char *gt_file, float time_index);
+
+// Update OPS: Wolverine-style loop (search→delete), output recall,search_OPS,delete_OPS,insert_OPS
+void updateOPS(Objects *data, GTI *&gti, Objects *query, char *res_file, char *gt_file, float time_index);

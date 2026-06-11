@@ -1,0 +1,20 @@
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+[?12l[?25h[SHG] GTI_SHG_FULL_DIM_LEVEL_SKIP=1: level-skipping uses full-dimensional distance (no compression)
+ data_rep_memory_: 0x7fc598b46010 data_rep_size_:40
+Time of index construction: 281.448s
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.00160127s
+Search recall: 0.842
+========== Save results ==========
+Results saved to ./results/sift/aknn_compare/shg_comp_off/cost_10_60.txt
+========== Release memory ==========

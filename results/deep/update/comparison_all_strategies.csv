@@ -1,0 +1,3 @@
+strategy,backend,idx_s,insert_s,delete_s,total_s,recall_after_insert,recall_after_delete
+lazy,GTI_n2,65.908859,15.6350,1853.5750,1935.1189,0.938,0.936
+wolverine,GTI,458.951569,4.9400,5.5950,469.4866,0.912,0.907

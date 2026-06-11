@@ -1,0 +1,59 @@
+========== Load data file ==========
+Data dimension: 256
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 256
+Query size: 1000
+Distance metric type: 0
+========== Build GTI ==========
+MST_CONFIG: full_threshold=200 sample_size=300 balance_min_frac=0.200000 use_sampling=0 seed=42 medoid_k=64
+MST attempts: 955020, used: 955017, fallbacks: 3
+Time of index construction: 76.885536s
+========== Update ==========
+Update setting: ratio=0.005000, update_n=5000, chunk_size=500
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001553s
+Search recall: 0.960000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001548s
+Search recall: 0.960000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001555s
+Search recall: 0.960000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001546s
+Search recall: 0.960000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001548s
+Search recall: 0.959000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001563s
+Search recall: 0.958000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001546s
+Search recall: 0.958000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001531s
+Search recall: 0.958000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001548s
+Search recall: 0.958000
+========== Search GTI ==========
+query->num: 100
+Time of search: 0.001523s
+Search recall: 0.957000
+Insert avg time: 0.002599s
+========== Save results ==========
+Results saved to ./results/split_compare/mst_param_tuning/deep/mst_full_1_run2/update/update_summary_k10_l60_ratio0.005.txt
+Curve saved to ./results/split_compare/mst_param_tuning/deep/mst_full_1_run2/update/update_curve_k10_l60_ratio0.005.csv
+========== Release memory ==========

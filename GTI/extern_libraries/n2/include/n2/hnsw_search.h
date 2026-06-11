@@ -42,7 +42,8 @@ namespace n2
         virtual void SearchById(int id, size_t k, int ef_search, bool ensure_k,
                                 std::vector<std::pair<int, float>> &result) = 0;
         virtual void SearchByVectorM(const std::vector<float> &qvec, size_t k, int ef_search, bool ensure_k,
-                                     std::vector<std::pair<int, float>> &result, std::vector<Neighbor> &result_leaf, std::vector<GTI_Entry *> &entries_sec, std::vector<std::vector<float>> &data) = 0;
+                                     std::vector<std::pair<int, float>> &result, std::vector<Neighbor> &result_leaf, std::vector<GTI_Entry *> &entries_sec, std::vector<std::vector<float>> &data,
+                                     int enterpoint_id = -1) = 0;
     };
 
 } // namespace n2

@@ -1,0 +1,34 @@
+========== Load data file ==========
+Data dimension: 128
+Data size: 1000000
+Distance metric type: 0
+========== Load query file ==========
+Query dimension: 128
+Query size: 10000
+Distance metric type: 0
+========== Build GTI ==========
+Graph M: 16
+Time of index construction: 35.8812s
+========== Update OPS (chunked insert+delete) ==========
+update_n: 10000 insert_chunk: 1000 delete_chunk: 2000 rebuild_threshold: 5000
+========== Chunked insert 10000 (chunk=1000) ==========
+  Insert 1000 in 1.10788s, insert_OPS=902.623 | recall=0.979 search_OPS=888.76
+  Insert 1000 in 0.996677s, insert_OPS=1003.33 | recall=0.979 search_OPS=948.55
+  Insert 1000 in 0.988422s, insert_OPS=1011.71 | recall=0.979 search_OPS=970.5
+  Insert 1000 in 0.951304s, insert_OPS=1051.19 | recall=0.979 search_OPS=978.184
+  Insert 1000 in 0.959266s, insert_OPS=1042.46 | recall=0.968 search_OPS=971.96
+  Insert 1000 in 0.949078s, insert_OPS=1053.65 | recall=0.937 search_OPS=946.913
+  Insert 1000 in 0.943709s, insert_OPS=1059.65 | recall=0.915 search_OPS=982.996
+  Insert 1000 in 0.955215s, insert_OPS=1046.88 | recall=0.906 search_OPS=972.504
+  Insert 1000 in 0.946046s, insert_OPS=1057.03 | recall=0.897 search_OPS=987.585
+  Insert 1000 in 0.957437s, insert_OPS=1044.45 | recall=0.894 search_OPS=985.853
+Insert avg OPS: 1027.3
+========== Chunked delete 10000 (chunk=2000) ==========
+  Delete 2000 in 0.000147181s, delete_OPS=1.35887e+07 | recall=0.891 search_OPS=986.973
+  Delete 2000 in 0.000151917s, delete_OPS=1.31651e+07 | recall=0.887 search_OPS=985.643
+  Delete 2000 in 0.000122506s, delete_OPS=1.63257e+07 | recall=0.885 search_OPS=980.486
+  Delete 2000 in 0.000195804s, delete_OPS=1.02143e+07 | recall=0.883 search_OPS=978.085
+  Delete 2000 in 9.5109e-05s, delete_OPS=2.10285e+07 | recall=0.877 search_OPS=982.789
+  Final rebuild 10000 items ... total=52.8642s (graph_update=51.1666s, rebuild=0.826589s) graph_update_OPS=195.44 rebuild_OPS=12097.9
+OPS results saved to ./results/sift/update/lazy/ops_k10_l60.csv
+========== Done ==========

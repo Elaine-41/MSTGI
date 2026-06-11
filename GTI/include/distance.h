@@ -4,7 +4,7 @@
 #pragma once
 #include <iostream>
 #include <math.h>
-#include <eigen3/Eigen/Dense>
+#include <Eigen/Dense>
 
 class Distance
 {
