@@ -196,10 +196,7 @@ Each dataset can be obtained from the following links.
 | Dataset | Cardinality | Dim. | Type  | Link                                                         |
 | ------- | ----------- | ---- | ----- | ------------------------------------------------------------ |
 | Deep    | 1,000,000   | 256  | Image | https://www.cse.cuhk.edu.hk/systems/hash/gqr/dataset/deep1M.tar.gz |
-| Msong   | 992,272     | 420  | Audio | http://www.ifs.tuwien.ac.at/mir/msd/                         |
 | Gist    | 1,000,000   | 960  | Image | http://corpus-texmex.irisa.fr/                               |
-| Color   | 5,000,000   | 282  | Image | http://cophir.isti.cnr.it                                    |
-| Turing  | 100,000,000 | 100  | Text  | https://big-ann-benchmarks.com/neurips21.html                |
 | Bigann  | 100,000,000 | 128  | Image | http://corpus-texmex.irisa.fr/                               |
 
 The dataset and query files are stored in .fvecs format (base type is float), and the data or query vectors are stored in raw little endian. Each vector takes 4+d*4 bytes for .fvecs, of which the first 4 bytes are used to store the dimension d of the vector, and the following 4 bytes for each are used to store the values of each dimension.
